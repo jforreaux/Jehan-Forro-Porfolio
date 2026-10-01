@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FELTA Educational Technology Initiatives - Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#b2dff1',
+                            medium: '#4275a2',
+                            primary: '#08366b',
+                            gold: '#c59a4a',
+                            earth: '#8f7262',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #08366b 0%, #4275a2 100%);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10 border-b-2 border-brand-primary">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-brand-primary hover:text-brand-medium font-bold flex items-center space-x-2 transition duration-150">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Portfolio</span>
+            </a>
+            <a href="index.html#contact" class="bg-brand-primary text-white text-sm px-4 py-2 rounded-full font-semibold hover:bg-brand-medium transition duration-150">
+                Get In Touch
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <section class="gradient-bg text-white pt-32 pb-16 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="bg-brand-gold text-brand-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    Educational Technology & STEM
+                </span>
+                <span class="text-brand-light text-sm font-medium">
+                    FELTA Multi-Media Partnership
+                </span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">
+                FELTA Educational Technology Initiatives
+            </h1>
+            <p class="text-lg text-brand-light max-w-2xl">
+                Advancing ed-tech solutions, interactive STEM learning, and school-wide digital transformations through specialized teacher training and curriculum integration.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 max-w-4xl flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            
+            <!-- Main Column -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Overview -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                    <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2">
+                        Project Overview
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        In collaboration with FELTA Multi-Media Inc., a pioneer in educational technology in the Philippines, this initiative focuses on modernizing school classrooms through hands-on STEM tools, robotics education, and interactive learning media.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        The program bridges modern ed-tech solutions with school curricula, equipping educators with practical skills to integrate digital tools, robotic kits, and interactive software into everyday teaching.
+                    </p>
+                </div>
+
+                <!-- Key Deliverables -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                    <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2">
+                        Key Deliverables & Facilitation
+                    </h2>
+                    <ul class="list-disc list-inside text-gray-600 space-y-3 leading-relaxed">
+                        <li><strong>STEM & Robotics Workshops:</strong> Facilitated hands-on training for educators on implementing robotics and interactive learning platforms.</li>
+                        <li><strong>Curriculum Integration:</strong> Designed framework guides to seamlessly embed modern educational technology into school learning modules.</li>
+                        <li><strong>Resource Speaker Delivery:</strong> Conducted large-scale webinars and live demonstrations highlighting school-wide tech transformation.</li>
+                        <li><strong>Technical Consultation:</strong> Assisted educational institutions in evaluating and deploying learning technology tools suited for their students.</li>
+                    </ul>
+                </div>
+
+                <!-- Photo Gallery Section -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                    <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2 flex justify-between items-center">
+                        <span>Project Highlights & Gallery</span>
+                        <span class="text-xs text-gray-400 font-normal">Click or replace image sources below</span>
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Photo 1 -->
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
+                            <img src="https://via.placeholder.com/600x400?text=Robotics+Workshop" alt="Robotics Workshop" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        </div>
+                        <!-- Photo 2 -->
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
+                            <img src="https://via.placeholder.com/600x400?text=Teacher+Training" alt="Teacher Training" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        </div>
+                        <!-- Photo 3 -->
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
+                            <img src="https://via.placeholder.com/600x400?text=STEM+Demonstration" alt="STEM Demonstration" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        </div>
+                        <!-- Photo 4 -->
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
+                            <img src="https://via.placeholder.com/600x400?text=EdTech+Exhibition" alt="EdTech Exhibition" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results & Impact -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border-l-4 border-brand-gold border-t border-r border-b border-gray-100">
+                    <h2 class="text-2xl font-bold text-brand-primary mb-3">
+                        Results & Measured Impact
+                    </h2>
+                    <p class="text-gray-700 leading-relaxed font-medium mb-3">
+                        Transformed classroom tech integration and empowered educators across various academic institutions.
+                    </p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                        <li>Trained hundreds of teachers and academic coordinators in STEM/robotics implementation.</li>
+                        <li>Accelerated digital tool adoption in public and private school learning environments.</li>
+                        <li>Elevated student engagement through interactive ed-tech methodologies and competitive robotics training.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="space-y-6">
+                <!-- Meta Details -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-brand-primary mb-4 border-b border-gray-100 pb-2">
+                        Project Meta
+                    </h3>
+                    
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Role</span>
+                            <span class="font-medium text-gray-700">Resource Speaker & EdTech Trainer</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Target Audience</span>
+                            <span class="font-medium text-gray-700">Educators / School Administrators / Students</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Scope</span>
+                            <span class="font-medium text-gray-700">Educational Technology & STEM Enablement</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Location</span>
+                            <span class="font-medium text-gray-700">Philippines (Nationwide)</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <span class="text-gray-400 block text-xs font-semibold uppercase mb-3">Skills & Tools Used</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">EdTech</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">STEM / Robotics</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Teacher Training</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Digital Literacy</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Public Speaking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="bg-brand-light/30 p-6 rounded-xl border border-brand-light text-center">
+                    <h4 class="font-bold text-brand-primary mb-2">Need EdTech Training for Your School?</h4>
+                    <p class="text-xs text-gray-600 mb-4">Let's collaborate to bring interactive STEM and robotics solutions to your institution.</p>
+                    <a href="index.html#contact" class="block w-full bg-brand-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-brand-medium transition duration-200">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-primary text-white py-6 border-t border-brand-medium mt-auto">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2026 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
