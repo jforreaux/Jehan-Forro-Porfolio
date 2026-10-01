@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Management Strategy Page - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#b2dff1',
+                            medium: '#4275a2',
+                            primary: '#08366b',
+                            gold: '#c59a4a',
+                            earth: '#8f7262',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #08366b 0%, #4275a2 100%);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10 border-b-2 border-brand-primary">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-brand-primary hover:text-brand-medium font-bold flex items-center space-x-2 transition duration-150">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Home Portfolio</span>
+            </a>
+            <a href="index.html#contact" class="bg-brand-primary text-white text-sm px-4 py-2 rounded-full font-semibold hover:bg-brand-medium transition duration-150">
+                Get In Touch
+            </a>
+        </div>
+    </nav>
+
+    <!-- Project Hero Header -->
+    <section class="gradient-bg text-white pt-32 pb-16 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="flex items-center space-x-3 mb-4">
+                <span id="project-category" class="bg-brand-gold text-brand-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    Category
+                </span>
+                <span id="project-client" class="text-brand-light text-sm font-medium">
+                    Client / Organization
+                </span>
+            </div>
+            <h1 id="project-title" class="text-3xl md:text-5xl font-bold mb-4">
+                Project Title Heading
+            </h1>
+            <p id="project-subtitle" class="text-lg text-brand-light max-w-2xl">
+                A brief high-level summary of the project scope and key objective.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main class="container mx-auto px-6 py-12 max-w-4xl flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            
+            <!-- Left 2 Columns: Detailed Breakdown -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Overview -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                    <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2">
+                        Project Overview
+                    </h2>
+                    <p id="project-description" class="text-gray-600 leading-relaxed">
+                        Detailed explanation of the project context, challenges faced, and core execution strategies implemented.
+                    </p>
+                </div>
+
+                <!-- Key Deliverables & Responsibilities -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                    <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2">
+                        Key Deliverables & Execution
+                    </h2>
+                    <ul id="project-deliverables" class="list-disc list-inside text-gray-600 space-y-3 leading-relaxed">
+                        <li>Strategic implementation and workflow optimization.</li>
+                        <li>Cross-functional team coordination and SOP documentation.</li>
+                        <li>Performance monitoring and quality assurance checks.</li>
+                    </ul>
+                </div>
+
+                <!-- Results & Impact -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border-l-4 border-brand-gold border-t border-r border-b border-gray-100">
+                    <h2 class="text-2xl font-bold text-brand-primary mb-3">
+                        Results & Measured Impact
+                    </h2>
+                    <p id="project-impact" class="text-gray-700 leading-relaxed font-medium">
+                        Key metrics, awards, efficiency gains, or community reach achieved through this project.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Sidebar: Project Meta Data & Navigation -->
+            <div class="space-y-6">
+                <!-- Project Info Panel -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-brand-primary mb-4 border-b border-gray-100 pb-2">
+                        Project Details
+                    </h3>
+                    
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Role</span>
+                            <span id="sidebar-role" class="font-medium text-gray-700">Project Manager / VA</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Duration</span>
+                            <span id="sidebar-duration" class="font-medium text-gray-700">Ongoing / Campaign</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Location</span>
+                            <span id="sidebar-location" class="font-medium text-gray-700">Remote / Philippines</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <span class="text-gray-400 block text-xs font-semibold uppercase mb-3">Tools & Tech Stack</span>
+                        <div id="project-tags" class="flex flex-wrap gap-2">
+                            <!-- Tags inserted via JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action Card -->
+                <div class="bg-brand-light/30 p-6 rounded-xl border border-brand-light text-center">
+                    <h4 class="font-bold text-brand-primary mb-2">Need a similar solution?</h4>
+                    <p class="text-xs text-gray-600 mb-4">Let's discuss how we can streamline your business workflows.</p>
+                    <a href="index.html#contact" class="block w-full bg-brand-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-brand-medium transition duration-200">
+                        Work With Me
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-primary text-white py-6 border-t border-brand-medium mt-auto">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2026 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Dynamic Content Loader Script -->
+    <script>
+        // Sample project dataset corresponding to home page cards
+        const projectData = {
+            'content-strategy': {
+                category: 'Virtual Assistance & Marketing',
+                client: 'OnlineJobs.ph',
+                title: 'B2B Content Strategy & Media Operations',
+                subtitle: 'Directing organic social media execution, podcast production pipelines, and centralized media databases.',
+                role: 'Content Lead / Virtual Assistant',
+                duration: 'Multi-Year Project',
+                location: 'Remote',
+                description: 'Supervised full-cycle organic B2B social media execution and content distribution channels. Established robust operating systems to manage audio/video podcast releases, team collaboration pipelines, and asset libraries.',
+                deliverables: [
+                    'Created comprehensive Standard Operating Procedures (SOPs) for podcast release workflows.',
+                    'Engineered centralized Notion and Airtable databases for cross-channel editorial planning.',
+                    'Managed asset handoffs between video editors, graphic designers, and copywriters.'
+                ],
+                impact: 'Streamlined publication cycles, reduced production bottlenecks by 40%, and achieved steady growth in organic engagement across B2B audience channels.',
+                tags: ['Notion', 'Airtable', 'Podcast Mgmt', 'SOP Creation', 'Content Strategy']
+            },
+            'wordcamp': {
+                category: 'Technical Event Management',
+                client: 'WordCamp PH 2026',
+                title: 'WordCamp PH Marketing & Technical Operations',
+                subtitle: 'Leading cross-functional marketing teams, speaker rollouts, and nationwide community engagement.',
+                role: 'Marketing Lead',
+                duration: 'Event Campaign',
+                location: 'Philippines',
+                description: 'Directed marketing and digital operations for WordCamp Philippines. Oversaw team coordination, platform announcements, multi-channel promotion strategy, and cross-functional committee execution.',
+                deliverables: [
+                    'Managed social media campaigns, speaker highlights, and schedule announcements.',
+                    'Coordinated volunteer committees for session moderation and platform support.',
+                    'Maintained WordPress site content and sponsor branding guidelines.'
+                ],
+                impact: 'Drove record online engagement and nationwide participation across developers, business owners, and tech enthusiasts.',
+                tags: ['WordPress', 'Event Marketing', 'Community Management', 'Cross-Functional Lead']
+            },
+            'ecommerce-va': {
+                category: 'E-Commerce & Virtual Support',
+                client: 'E-Commerce Clients',
+                title: 'WooCommerce & Shopify Operations Specialist',
+                subtitle: 'Managing online store inventory, customer support escalation, and custom UI layout configurations.',
+                role: 'E-Commerce Virtual Assistant',
+                duration: 'Ongoing',
+                location: 'Remote',
+                description: 'Provided end-to-end e-commerce store administration for WooCommerce and Shopify platforms. Focused on product listing optimization, customer service workflows, and custom layout tweaks.',
+                deliverables: [
+                    'Configured custom WooCommerce shop sorting controls and CSS filter adjustments.',
+                    'Drafted team onboarding guidelines and customer escalation SOPs.',
+                    'Synchronized multi-channel inventory counts to prevent stockouts.'
+                ],
+                impact: 'Maintained 99%+ order fulfillment accuracy and elevated user shopping experience through custom front-end CSS layouts.',
+                tags: ['WooCommerce', 'Shopify', 'CSS Styling', 'Customer Support', 'Toggl']
+            },
+            'asean-women': {
+                category: 'Digital Training & Mentorship',
+                client: 'ASEAN MSMEs Program',
+                title: 'ASEAN Women MSMEs Digital Empowerment',
+                subtitle: 'Facilitating regional digital transformation workshops and mentoring local women entrepreneurs.',
+                role: 'ASEAN-Certified Trainer',
+                duration: 'Program Cycle',
+                location: 'Southeast Asia',
+                description: 'Delivered structured capacity-building workshops on digital adoption, e-commerce integration, and online business management for women-led enterprises.',
+                deliverables: [
+                    'Conducted interactive training modules on digital tools and e-commerce setups.',
+                    'Provided 1-on-1 mentorship for business growth and pitch preparation.',
+                    'Guided participants through digital marketing strategies.'
+                ],
+                impact: 'Successfully mentored a participating local MSME chosen to represent the Philippines at an international showcase in South Korea.',
+                tags: ['ASEAN Certified', 'Mentorship', 'E-Commerce', 'Capacity Building']
+            },
+            'ai-ready': {
+                category: 'AI Literacy & Technology',
+                client: 'Project WISE / JCI',
+                title: 'AI Ready ASEAN Literacy Initiative',
+                subtitle: 'Empowering students and entrepreneurs with actionable artificial intelligence skills.',
+                role: 'Program Director & Trainer',
+                duration: 'Special Initiative',
+                location: 'Philippines',
+                description: 'Engineered and facilitated AI adoption workshops under Project WISE, educating youth and business owners on practical AI workflows and productivity tools.',
+                deliverables: [
+                    'Designed interactive curricula covering AI fundamentals and practical prompt design.',
+                    'Organized hands-on learning labs for prompt creation and office automation.',
+                    'Facilitated partner workshops with local civic organizations.'
+                ],
+                impact: 'Honored with the prestigious Agung Award for Best JCI RISE Project for driving widespread regional AI adoption.',
+                tags: ['AI Readiness', 'Project WISE', 'JCI RISE Award', 'Workshop Facilitation']
+            },
+            'dict-deped': {
+                category: 'Public Sector Training',
+                client: 'DICT SPARK & DepEd',
+                title: 'Digital Literacy & Educator Tech Transformation',
+                subtitle: 'Serving as keynote resource speaker on ICT adoption and modern digital skillsets.',
+                role: 'Resource Speaker',
+                duration: 'Multi-Session Series',
+                location: 'Philippines',
+                description: 'Partnered with the Department of Information and Communications Technology (DICT) and Felta Multi-Media to deliver technology enablement training to educators and public sector workers.',
+                deliverables: [
+                    'Delivered keynote presentations on digital skills and workplace tech tools.',
+                    'Trained educators on integrating modern software into learning management.',
+                    'Facilitated Q&A sessions addressing technical adoption challenges.'
+                ],
+                impact: 'Empowered over 2,200 educators and ICT trainees with essential digital skillsets.',
+                tags: ['DICT SPARK', 'DepEd', 'Digital Literacy', 'Public Speaking']
+            }
+        };
+
+        // Parse query string (e.g. project-details.html?id=wordcamp)
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id') || 'content-strategy'; // Default to first project if none specified
+        const data = projectData[projectId] || projectData['content-strategy'];
+
+        // Render project data into HTML
+        document.getElementById('project-category').textContent = data.category;
+        document.getElementById('project-client').textContent = data.client;
+        document.getElementById('project-title').textContent = data.title;
+        document.getElementById('project-subtitle').textContent = data.subtitle;
+        document.getElementById('project-description').textContent = data.description;
+        document.getElementById('project-impact').textContent = data.impact;
+        document.getElementById('sidebar-role').textContent = data.role;
+        document.getElementById('sidebar-duration').textContent = data.duration;
+        document.getElementById('sidebar-location').textContent = data.location;
+
+        // Render Deliverables List
+        const deliverablesEl = document.getElementById('project-deliverables');
+        deliverablesEl.innerHTML = '';
+        data.deliverables.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            deliverablesEl.appendChild(li);
+        });
+
+        // Render Tech Stack Tags
+        const tagsEl = document.getElementById('project-tags');
+        tagsEl.innerHTML = '';
+        data.tags.forEach(tag => {
+            const span = document.createElement('span');
+            span.className = 'bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium';
+            span.textContent = tag;
+            tagsEl.appendChild(span);
+        });
+    </script>
+</body>
+</html>
