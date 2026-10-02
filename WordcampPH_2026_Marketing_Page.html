@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WordCamp PH 2026 Marketing - Project Details</title>
+    <title>WordCamp PH 2026 - Project Details</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,130 +23,194 @@
             }
         }
     </script>
+    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #08366b 0%, #4275a2 100%);
+        /* Smooth backdrop blur animation for image lightbox modal */
+        #imageModal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #imageModal {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .modal-content {
+            transform: scale(0.95);
+            transition: transform 0.3s ease-in-out;
+        }
+        #imageModal.active .modal-content {
+            transform: scale(1);
         }
     </style>
 </head>
-<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen relative selection:bg-brand-gold selection:text-brand-primary">
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full z-10 border-b-2 border-brand-primary">
+    <!-- Navigation Bar -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-md fixed w-full z-20 border-b-2 border-brand-primary">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-brand-primary hover:text-brand-medium font-bold flex items-center space-x-2 transition duration-150">
                 <i class="fa-solid fa-arrow-left"></i>
                 <span>Back to Portfolio</span>
             </a>
-            <a href="index.html#contact" class="bg-brand-primary text-white text-sm px-4 py-2 rounded-full font-semibold hover:bg-brand-medium transition duration-150">
+            <a href="index.html#contact" class="bg-brand-primary text-white text-sm px-4 py-2 rounded-full font-semibold hover:bg-brand-medium transition duration-150 shadow-sm">
                 Get In Touch
             </a>
         </div>
     </nav>
 
-    <!-- Hero Header -->
-    <section class="gradient-bg text-white pt-32 pb-16 px-6">
-        <div class="container mx-auto max-w-4xl">
-            <div class="flex items-center space-x-3 mb-4">
-                <span class="bg-brand-gold text-brand-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    Technical Event Marketing
+    <!-- Full-Screen Hero Header -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-16 px-6 text-white overflow-hidden bg-brand-primary">
+        <!-- Background Cover Photo -->
+        <img 
+            src="Gallery/WordCamp PH 2026/IMG_3052.JPG" 
+            alt="WordCamp PH 2026 Marketing Strategy & Leadership Cover" 
+            class="absolute inset-0 w-full h-full object-cover object-center opacity-60 cursor-pointer hover:scale-105 transition-transform duration-700"
+            onclick="openModal(4)"
+        />
+        
+        <!-- Subtle Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/60 to-transparent pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-primary/80 via-brand-primary/40 to-transparent pointer-events-none"></div>
+
+        <!-- Header Content -->
+        <div class="container mx-auto max-w-4xl relative z-10">
+            <div class="flex flex-wrap items-center gap-3 mb-6">
+                <span class="bg-brand-gold text-brand-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
+                    Event Marketing & Brand Strategy
                 </span>
-                <span class="text-brand-light text-sm font-medium">
-                    WordCamp Philippines 2026
+                <span class="text-brand-light text-sm font-semibold tracking-wide bg-brand-primary/50 px-3 py-1 rounded-full border border-brand-light/20 backdrop-blur-sm">
+                    WordCamp PH 2026
                 </span>
             </div>
-            <h1 class="text-3xl md:text-5xl font-bold mb-4">
-                WordCamp PH 2026 Marketing Lead
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-md leading-tight">
+                WordCamp PH 2026 Marketing Leadership
             </h1>
-            <p class="text-lg text-brand-light max-w-2xl">
-                Directing cross-functional marketing teams, social media output, speaker rollouts, and nationwide community engagement for the premier WordPress conference.
+            <p class="text-lg md:text-xl text-brand-light max-w-2xl leading-relaxed drop-shadow-sm mb-6">
+                Directing cross-functional team coordination, content strategy, and community engagement initiatives to maximize audience reach for the national WordPress conference.
             </p>
+
+            <!-- Recognition Tag -->
+            <div class="inline-flex items-center space-x-2 bg-yellow-500/20 backdrop-blur-md border border-brand-gold/40 text-brand-gold px-4 py-2 rounded-lg text-sm font-semibold mb-8">
+                <i class="fa-solid fa-bullhorn"></i>
+                <span>National Community Engagement & Content Campaign Leadership</span>
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="#overview" class="inline-flex items-center space-x-2 bg-brand-gold text-brand-primary font-bold px-6 py-3 rounded-full hover:bg-white transition duration-200 shadow-lg">
+                    <span>Explore Project Details</span>
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+                <button 
+                    onclick="openModal(4)" 
+                    class="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-medium px-5 py-3 rounded-full backdrop-blur-md border border-white/30 transition duration-200">
+                    <i class="fa-solid fa-expand"></i>
+                    <span>View Gallery</span>
+                </button>
+            </div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12 max-w-4xl flex-grow">
+    <!-- Main Content Grid -->
+    <main id="overview" class="container mx-auto px-6 py-16 max-w-4xl flex-grow">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
             
             <!-- Main Column -->
             <div class="lg:col-span-2 space-y-8">
-                <!-- Overview -->
+                <!-- Overview Section -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                     <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2">
                         Project Overview
                     </h2>
                     <p class="text-gray-600 leading-relaxed mb-4">
-                        As Marketing Lead for WordCamp PH 2026, I spearheaded the comprehensive multi-channel promotion and communications strategy for the nation’s largest WordPress community gathering.
+                        Serving as the <strong>Marketing Lead</strong> for <strong>WordCamp PH 2026</strong> from February to August 2026, I spearheaded the comprehensive marketing roadmap, brand narrative, and digital outreach for the premier national WordPress conference in the Philippines.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        My responsibilities centered on orchestrating cross-functional team workflows across design, logistics, and communications, ensuring synchronized campaign rollouts and a cohesive brand presence across all official channels.
                     </p>
                     <p class="text-gray-600 leading-relaxed">
-                        This role required balancing creative storytelling, community management, content scheduling pipelines, and technical website updates while coordinating volunteer teams, conference speakers, and local sponsors.
+                        Through dynamic community engagement strategies and storytelling campaigns, I led the production of high-volume social media content that highlighted community leaders, speakers, sponsors, and behind-the-scenes organizers.
                     </p>
                 </div>
 
-                <!-- Key Deliverables -->
+                <!-- Key Deliverables Section -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                     <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2">
-                        Key Deliverables & Responsibilities
+                        Key Deliverables & Marketing Responsibilities
                     </h2>
                     <ul class="list-disc list-inside text-gray-600 space-y-3 leading-relaxed">
-                        <li><strong>Campaign Architecture:</strong> Designed the end-to-end editorial calendar for call-for-speakers, ticket releases, sponsor highlights, and event countdowns.</li>
-                        <li><strong>Cross-Functional Leadership:</strong> Directed creative volunteers, graphic designers, copywriters, and platform moderators across remote channels.</li>
-                        <li><strong>WordPress CMS Publishing:</strong> Managed post updates, speaker bios, and sponsor branding directly on the official WordCamp site.</li>
-                        <li><strong>Community Outreach:</strong> Supervised social media engagement and community inquiries across Facebook, LinkedIn, Twitter/X, and tech forums.</li>
+                        <li><strong>Cross-Functional Team Leadership:</strong> Coordinated collaboration among design, editorial, and event management teams to ensure seamless campaign execution and brand alignment.</li>
+                        <li><strong>Content Strategy & Editorial Control:</strong> Designed and implemented a structured content calendar targeting tech professionals, developers, agencies, and open-source enthusiasts nationwide.</li>
+                        <li><strong>High-Volume Social Media Management:</strong> Produced authentic, human-centric, and behind-the-scenes social content that elevated event visibility and fostered active community participation.</li>
+                        <li><strong>Community Outreach & Sponsorship Promotion:</strong> Executed targeted engagement initiatives to showcase speakers, volunteers, and national and international sponsors.</li>
                     </ul>
                 </div>
 
                 <!-- Photo Gallery Section -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-                    <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2 flex justify-between items-center">
-                        <span>Project Highlights & Gallery</span>
-                        <span class="text-xs text-gray-400 font-normal">Click or replace image sources below</span>
+                    <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2 flex justify-between items-center flex-wrap gap-2">
+                        <span>Campaign Highlights & Gallery</span>
+                        <span class="text-xs text-brand-medium bg-brand-light/30 px-2.5 py-1 rounded-full font-normal">
+                            <i class="fa-solid fa-images mr-1"></i> Click photo to launch carousel
+                        </span>
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <!-- Photo 1 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="https://via.placeholder.com/600x400?text=Marketing+Strategy+Planning" alt="Marketing Strategy Planning" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
-                            <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                                <span class="text-white text-xs font-semibold">Marketing Campaign & Editorial Calendar Planning</span>
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(0)">
+                            <img src="Gallery/WordCamp PH 2026/IMG_3077.JPG" alt="Marketing Team Strategy Session" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
+                                </div>
                             </div>
                         </div>
+
                         <!-- Photo 2 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="https://via.placeholder.com/600x400?text=Social+Media+Rollout" alt="Social Media Rollout" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
-                            <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                                <span class="text-white text-xs font-semibold">Speaker & Sponsor Social Media Assets</span>
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(1)">
+                            <img src="Gallery/WordCamp PH 2026/IMG_3044.JPG" alt="Community Engagement & Social Highlights" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
+                                </div>
                             </div>
                         </div>
+
                         <!-- Photo 3 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="https://via.placeholder.com/600x400?text=WordPress+Site+Management" alt="WordPress Site Management" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
-                            <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                                <span class="text-white text-xs font-semibold">WordPress CMS Content Management</span>
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(2)">
+                            <img src="Gallery/WordCamp PH 2026/IMG_3052.JPG" alt="Behind-The-Scenes Content Production" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
+                                </div>
                             </div>
                         </div>
+
                         <!-- Photo 4 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="https://via.placeholder.com/600x400?text=Event+Day+Coverage" alt="Event Day Coverage" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
-                            <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                                <span class="text-white text-xs font-semibold">On-Site & Live Event Coverage</span>
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(3)">
+                            <img src="Gallery/WordCamp PH 2026/CleanShot_2026-08-20_at_20.26.17.png" alt="National Conference Main Stage" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Results & Impact -->
+                <!-- Results & Strategic Impact -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border-l-4 border-brand-gold border-t border-r border-b border-gray-100">
-                    <h2 class="text-2xl font-bold text-brand-primary mb-3">
-                        Results & Community Impact
+                    <h2 class="text-2xl font-bold text-brand-primary mb-3 flex items-center space-x-2">
+                        <i class="fa-solid fa-chart-line text-brand-gold"></i>
+                        <span>Campaign Impact & Results</span>
                     </h2>
-                    <p class="text-gray-700 leading-relaxed font-medium mb-3">
-                        Drove record online reach and registration conversions across regional developer networks, digital agencies, freelancers, and enterprise IT leaders.
+                    <p class="text-gray-700 leading-relaxed font-semibold mb-3">
+                        Substantially amplified audience reach, digital interactions, and ticket conversion rates for WordCamp PH 2026.
                     </p>
-                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                        <li>Achieved high ticket sell-out rates across early-bird and general admission tiers.</li>
-                        <li>Maintained a 100% on-time publishing schedule for speaker and sponsor announcements.</li>
-                        <li>Strengthened local tech community involvement across major Philippine urban hubs.</li>
+                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-2 leading-relaxed">
+                        <li>Achieved record social media reach and engagement across official conference platforms.</li>
+                        <li>Elevated sponsor and speaker visibility through human-centric storytelling and dedicated feature spotlights.</li>
+                        <li>Strengthened national WordPress community cohesion through active behind-the-scenes storytelling.</li>
                     </ul>
                 </div>
             </div>
@@ -165,35 +230,39 @@
                         </div>
                         <div>
                             <span class="text-gray-400 block text-xs font-semibold uppercase">Event</span>
-                            <span class="font-medium text-gray-700">WordCamp Philippines 2026</span>
+                            <span class="font-medium text-gray-700">WordCamp PH 2026</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Duration</span>
+                            <span class="font-medium text-gray-700">February 2026 – August 2026</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Focus Area</span>
+                            <span class="font-medium text-gray-700">Content Strategy & Community Engagement</span>
                         </div>
                         <div>
                             <span class="text-gray-400 block text-xs font-semibold uppercase">Scope</span>
-                            <span class="font-medium text-gray-700">Nationwide Tech Conference</span>
-                        </div>
-                        <div>
-                            <span class="text-gray-400 block text-xs font-semibold uppercase">Location</span>
-                            <span class="font-medium text-gray-700">Philippines (Hybrid/Remote Team)</span>
+                            <span class="font-medium text-brand-gold font-semibold">National Conference Campaign</span>
                         </div>
                     </div>
 
                     <div class="mt-6 pt-4 border-t border-gray-100">
-                        <span class="text-gray-400 block text-xs font-semibold uppercase mb-3">Skills & Tools Used</span>
+                        <span class="text-gray-400 block text-xs font-semibold uppercase mb-3">Skills & Expertise</span>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">WordPress CMS</span>
-                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Event Marketing</span>
-                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Team Leadership</span>
-                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Social Strategy</span>
-                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Community Lead</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Marketing Leadership</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Content Strategy</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Social Media Output</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Community Outreach</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Team Coordination</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Call to Action -->
                 <div class="bg-brand-light/30 p-6 rounded-xl border border-brand-light text-center">
-                    <h4 class="font-bold text-brand-primary mb-2">Need an Event or Tech Marketing Lead?</h4>
-                    <p class="text-xs text-gray-600 mb-4">Let's discuss how I can lead communications and growth for your next project.</p>
-                    <a href="index.html#contact" class="block w-full bg-brand-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-brand-medium transition duration-200">
+                    <h4 class="font-bold text-brand-primary mb-2">Need Event Marketing Leadership?</h4>
+                    <p class="text-xs text-gray-600 mb-4">Let's collaborate on content strategy, audience growth, or national community engagement campaigns.</p>
+                    <a href="index.html#contact" class="block w-full bg-brand-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-brand-medium transition duration-200 shadow-sm">
                         Get In Touch
                     </a>
                 </div>
@@ -201,6 +270,144 @@
 
         </div>
     </main>
+
+    <!-- Full-Screen Interactive Carousel Lightbox Modal -->
+    <div id="imageModal" class="fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4 bg-black/80 backdrop-blur-md" onclick="closeModalOnBackdrop(event)">
+        <div class="modal-content relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <!-- Modal Header / Controls -->
+            <div class="flex items-center justify-between p-4 bg-brand-primary text-white">
+                <div class="flex items-center space-x-3">
+                    <span id="modalCounter" class="bg-brand-gold text-brand-primary text-xs font-bold px-2.5 py-0.5 rounded-full">1 / 5</span>
+                </div>
+                <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition duration-200 flex-shrink-0">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Image Container with Navigation Overlay -->
+            <div class="relative bg-black/90 p-2 flex items-center justify-center min-h-[320px] max-h-[75vh] group">
+                <!-- Previous Button -->
+                <button onclick="prevImage()" class="absolute left-3 z-10 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center backdrop-blur-md transition duration-200 shadow-lg">
+                    <i class="fa-solid fa-chevron-left text-lg"></i>
+                </button>
+
+                <!-- Displayed Image -->
+                <img id="modalImage" src="" alt="Enlarged view" class="max-h-[70vh] w-auto max-w-full object-contain rounded-md transition-opacity duration-200">
+
+                <!-- Next Button -->
+                <button onclick="nextImage()" class="absolute right-3 z-10 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center backdrop-blur-md transition duration-200 shadow-lg">
+                    <i class="fa-solid fa-chevron-right text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Footer Controls -->
+            <div class="bg-gray-100 px-6 py-3 flex items-center justify-between">
+                <div class="text-xs text-gray-500 hidden sm:block">
+                    Use <span class="font-mono bg-gray-200 px-1.5 py-0.5 rounded">←</span> <span class="font-mono bg-gray-200 px-1.5 py-0.5 rounded">→</span> or swipe to navigate
+                </div>
+                <button onclick="closeModal()" class="bg-brand-primary text-white px-5 py-2 rounded-lg text-xs font-bold hover:bg-brand-medium transition duration-200 ml-auto">
+                    Close Preview
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Carousel Script -->
+    <script>
+        // Gallery Data Array
+        const galleryItems = [
+            'Gallery/WordCampPH2026/IMG_MARKETING_MEETING.jpg',
+            'Gallery/WordCampPH2026/IMG_COMMUNITY_ENGAGEMENT.jpg',
+            'Gallery/WordCampPH2026/IMG_BEHIND_THE_SCENES.jpg',
+            'Gallery/WordCampPH2026/IMG_KEYNOTE_STAGE.jpg',
+            'Gallery/WordCampPH2026/IMG_WORDCAMP_COVER.jpg'
+        ];
+
+        let currentIndex = 0;
+
+        // Update modal elements according to current index
+        function updateModal() {
+            const imageSrc = galleryItems[currentIndex];
+            const modalImg = document.getElementById('modalImage');
+            const modalCounter = document.getElementById('modalCounter');
+
+            modalImg.style.opacity = '0';
+            setTimeout(() => {
+                modalImg.src = imageSrc;
+                modalCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+                modalImg.style.opacity = '1';
+            }, 100);
+        }
+
+        // Open modal at specific photo index
+        function openModal(index) {
+            currentIndex = index;
+            updateModal();
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('active');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        // Close modal
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Navigate Next
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            updateModal();
+        }
+
+        // Navigate Previous
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            updateModal();
+        }
+
+        // Backdrop click handler
+        function closeModalOnBackdrop(event) {
+            if (event.target.id === 'imageModal') {
+                closeModal();
+            }
+        }
+
+        // Keyboard Navigation (Arrow Keys & ESC)
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('imageModal');
+            if (!modal.classList.contains('active')) return;
+
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+        // Touch Swipe Navigation for Mobile Devices
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const modalContainer = document.getElementById('imageModal');
+
+        modalContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        modalContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                nextImage(); // Swiped left
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                prevImage(); // Swiped right
+            }
+        }
+    </script>
 
     <!-- Footer -->
     <footer class="bg-brand-primary text-white py-6 border-t border-brand-medium mt-auto">
