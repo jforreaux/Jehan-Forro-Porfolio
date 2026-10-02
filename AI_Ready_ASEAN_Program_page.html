@@ -60,17 +60,17 @@
         </div>
     </nav>
 
-    <!-- Full-Screen Hero Header with Increased Photo Visibility & Lightbox Trigger -->
+    <!-- Full-Screen Hero Header -->
     <section class="relative min-h-screen flex items-center pt-24 pb-16 px-6 text-white overflow-hidden bg-brand-primary">
-        <!-- Background Cover Photo (Clickable) -->
+        <!-- Background Cover Photo -->
         <img 
             src="Gallery/AI Ready ASEAN/IMG20251202090801.jpg" 
             alt="AI Training Workshop Cover" 
             class="absolute inset-0 w-full h-full object-cover object-center opacity-60 cursor-pointer hover:scale-105 transition-transform duration-700"
-            onclick="openModal('Gallery/AI Ready ASEAN/IMG20251202090801.jpg', 'AI Ready ASEAN Program - Workshop Hero Background')"
+            onclick="openModal(4)"
         />
         
-        <!-- Subtle Gradient Overlay for Contrast -->
+        <!-- Subtle Gradient Overlay -->
         <div class="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/60 to-transparent pointer-events-none"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-brand-primary/80 via-brand-primary/40 to-transparent pointer-events-none"></div>
 
@@ -103,10 +103,10 @@
                     <i class="fa-solid fa-arrow-down"></i>
                 </a>
                 <button 
-                    onclick="openModal('Gallery/AI Ready ASEAN/IMG20251202090801.jpg', 'AI Ready ASEAN Program - Workshop Hero Background')" 
+                    onclick="openModal(4)" 
                     class="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-medium px-5 py-3 rounded-full backdrop-blur-md border border-white/30 transition duration-200">
                     <i class="fa-solid fa-expand"></i>
-                    <span>View Cover Photo</span>
+                    <span>View Gallery</span>
                 </button>
             </div>
         </div>
@@ -152,77 +152,57 @@
                     <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2 flex justify-between items-center flex-wrap gap-2">
                         <span>Project Highlights & Gallery</span>
                         <span class="text-xs text-brand-medium bg-brand-light/30 px-2.5 py-1 rounded-full font-normal">
-                            <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Click photo for full view
+                            <i class="fa-solid fa-images mr-1"></i> Click photo to launch carousel
                         </span>
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <!-- Photo 1 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer"
-                             onclick="openModal('Gallery/AI Ready ASEAN/IMG20250813163115.jpg', 'Interactive Workshop Facilitation - Engaging learners in AI literacy concepts')">
-                            <img src="Gallery/AI Ready ASEAN/IMG20250813163115.jpg" 
-                                 alt="Interactive Workshop Facilitation" 
-                                 class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
-                            <div class="absolute inset-0 bg-brand-primary/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-between p-4 text-white">
-                                <div class="self-end bg-white/20 p-2 rounded-full backdrop-blur-sm">
-                                    <i class="fa-solid fa-expand text-sm"></i>
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(0)">
+                            <img src="Gallery/AI Ready ASEAN/IMG20250813163115.jpg" alt="Interactive Workshop Facilitation" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
                                 </div>
-                                <span class="text-xs font-semibold">Interactive Workshop Facilitation</span>
                             </div>
                         </div>
 
                         <!-- Photo 2 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer"
-                             onclick="openModal('Gallery/AI Ready ASEAN/IMG20251013104345.jpg', 'Hands-on AI Tool Practice - Practical exercises with generative AI software')">
-                            <img src="Gallery/AI Ready ASEAN/IMG20251013104345.jpg" 
-                                 alt="Hands-on Training" 
-                                 class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
-                            <div class="absolute inset-0 bg-brand-primary/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-between p-4 text-white">
-                                <div class="self-end bg-white/20 p-2 rounded-full backdrop-blur-sm">
-                                    <i class="fa-solid fa-expand text-sm"></i>
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(1)">
+                            <img src="Gallery/AI Ready ASEAN/IMG20251013104345.jpg" alt="Hands-on Training" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
                                 </div>
-                                <span class="text-xs font-semibold">Hands-on AI Tool Practice</span>
                             </div>
                         </div>
 
                         <!-- Photo 3 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer"
-                             onclick="openModal('Gallery/AI Ready ASEAN/IMG20251202115749.jpg', 'Group Collaboration & Exercises - Student and entrepreneur collaboration')">
-                            <img src="Gallery/AI Ready ASEAN/IMG20251202115749.jpg" 
-                                 alt="Participant Mentorship" 
-                                 class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
-                            <div class="absolute inset-0 bg-brand-primary/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-between p-4 text-white">
-                                <div class="self-end bg-white/20 p-2 rounded-full backdrop-blur-sm">
-                                    <i class="fa-solid fa-expand text-sm"></i>
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(2)">
+                            <img src="Gallery/AI Ready ASEAN/IMG20251202115749.jpg" alt="Participant Mentorship" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
                                 </div>
-                                <span class="text-xs font-semibold">Group Collaboration & Exercises</span>
                             </div>
                         </div>
 
                         <!-- Photo 4 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer"
-                             onclick="openModal('Gallery/AI Ready ASEAN/IMG20251204151035.jpg', 'Certificates & Program Conclusion - Celebrating community AI readiness milestone')">
-                            <img src="Gallery/AI Ready ASEAN/IMG20251204151035.jpg" 
-                                 alt="Program Certifications" 
-                                 class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
-                            <div class="absolute inset-0 bg-brand-primary/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-between p-4 text-white">
-                                <div class="self-end bg-white/20 p-2 rounded-full backdrop-blur-sm">
-                                    <i class="fa-solid fa-expand text-sm"></i>
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(3)">
+                            <img src="Gallery/AI Ready ASEAN/IMG20251204151035.jpg" alt="Program Certifications" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
                                 </div>
-                                <span class="text-xs font-semibold">Certificates & Program Conclusion</span>
                             </div>
                         </div>
 
                         <!-- Photo 5 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer md:col-span-2"
-                             onclick="openModal('Gallery/AI Ready ASEAN/IMG20251202090801.jpg', 'Project WISE Workshop Cohort - AI Readiness Training with JCI Malagos Davao & Limitless Lab')">
-                            <img src="Gallery/AI Ready ASEAN/IMG20251202090801.jpg" 
-                                 alt="Project WISE Workshop Cohort" 
-                                 class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-brand-primary/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-between p-4 text-white">
-                                <div class="self-end bg-white/20 p-2 rounded-full backdrop-blur-sm">
-                                    <i class="fa-solid fa-expand text-sm"></i>
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer md:col-span-2" onclick="openModal(4)">
+                            <img src="Gallery/AI Ready ASEAN/IMG20251202090801.jpg" alt="Project WISE Workshop Cohort" class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
                                 </div>
-                                <span class="text-sm font-semibold">Project WISE Cohort & Training Session</span>
                             </div>
                         </div>
                     </div>
@@ -305,66 +285,142 @@
         </div>
     </main>
 
-    <!-- Full-Screen Lightbox Image Modal -->
-    <div id="imageModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md" onclick="closeModalOnBackdrop(event)">
+    <!-- Full-Screen Interactive Carousel Lightbox Modal -->
+    <div id="imageModal" class="fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4 bg-black/80 backdrop-blur-md" onclick="closeModalOnBackdrop(event)">
         <div class="modal-content relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-white/20">
             <!-- Modal Header / Controls -->
             <div class="flex items-center justify-between p-4 bg-brand-primary text-white">
-                <span id="modalCaption" class="text-sm font-semibold truncate pr-4">AI Ready ASEAN Photo Preview</span>
-                <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition duration-200">
+                <div class="flex items-center space-x-3">
+                    <span id="modalCounter" class="bg-brand-gold text-brand-primary text-xs font-bold px-2.5 py-0.5 rounded-full">1 / 5</span>
+                </div>
+                <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition duration-200 flex-shrink-0">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             
-            <!-- Modal Image Container -->
-            <div class="bg-black/90 p-2 flex items-center justify-center min-h-[300px] max-h-[75vh]">
-                <img id="modalImage" src="" alt="Enlarged view" class="max-h-[70vh] w-auto max-w-full object-contain rounded-md">
+            <!-- Modal Image Container with Navigation Overlay -->
+            <div class="relative bg-black/90 p-2 flex items-center justify-center min-h-[320px] max-h-[75vh] group">
+                <!-- Previous Button -->
+                <button onclick="prevImage()" class="absolute left-3 z-10 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center backdrop-blur-md transition duration-200 shadow-lg">
+                    <i class="fa-solid fa-chevron-left text-lg"></i>
+                </button>
+
+                <!-- Displayed Image -->
+                <img id="modalImage" src="" alt="Enlarged view" class="max-h-[70vh] w-auto max-w-full object-contain rounded-md transition-opacity duration-200">
+
+                <!-- Next Button -->
+                <button onclick="nextImage()" class="absolute right-3 z-10 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center backdrop-blur-md transition duration-200 shadow-lg">
+                    <i class="fa-solid fa-chevron-right text-lg"></i>
+                </button>
             </div>
 
-            <!-- Modal Footer -->
-            <div class="bg-gray-100 px-6 py-3 text-right">
-                <button onclick="closeModal()" class="bg-brand-primary text-white px-5 py-2 rounded-lg text-xs font-bold hover:bg-brand-medium transition duration-200">
+            <!-- Modal Footer Controls -->
+            <div class="bg-gray-100 px-6 py-3 flex items-center justify-between">
+                <div class="text-xs text-gray-500 hidden sm:block">
+                    Use <span class="font-mono bg-gray-200 px-1.5 py-0.5 rounded">←</span> <span class="font-mono bg-gray-200 px-1.5 py-0.5 rounded">→</span> or swipe to navigate
+                </div>
+                <button onclick="closeModal()" class="bg-brand-primary text-white px-5 py-2 rounded-lg text-xs font-bold hover:bg-brand-medium transition duration-200 ml-auto">
                     Close Preview
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- Lightbox Modal Script -->
+    <!-- Lightbox Carousel Script -->
     <script>
-        // Open the modal lightbox with target image src and caption
-        function openModal(imageSrc, captionText) {
-            const modal = document.getElementById('imageModal');
+        // Gallery Data Array
+        const galleryItems = [
+            'Gallery/AI Ready ASEAN/IMG20250813163115.jpg',
+            'Gallery/AI Ready ASEAN/IMG20251013104345.jpg',
+            'Gallery/AI Ready ASEAN/IMG20251202115749.jpg',
+            'Gallery/AI Ready ASEAN/IMG20251204151035.jpg',
+            'Gallery/AI Ready ASEAN/IMG20251202090801.jpg'
+        ];
+
+        let currentIndex = 0;
+
+        // Update modal elements according to current index
+        function updateModal() {
+            const imageSrc = galleryItems[currentIndex];
             const modalImg = document.getElementById('modalImage');
-            const modalCap = document.getElementById('modalCaption');
+            const modalCounter = document.getElementById('modalCounter');
 
-            modalImg.src = imageSrc;
-            modalCap.textContent = captionText || 'AI Ready ASEAN Project Photo';
-
-            modal.classList.add('active');
-            document.body.classList.add('overflow-hidden'); // Prevent background scrolling
+            modalImg.style.opacity = '0';
+            setTimeout(() => {
+                modalImg.src = imageSrc;
+                modalCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+                modalImg.style.opacity = '1';
+            }, 100);
         }
 
-        // Close the modal lightbox
+        // Open modal at specific photo index
+        function openModal(index) {
+            currentIndex = index;
+            updateModal();
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('active');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        // Close modal
         function closeModal() {
             const modal = document.getElementById('imageModal');
             modal.classList.remove('active');
             document.body.classList.remove('overflow-hidden');
         }
 
-        // Close when clicking directly on backdrop overlay
+        // Navigate Next
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            updateModal();
+        }
+
+        // Navigate Previous
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            updateModal();
+        }
+
+        // Backdrop click handler
         function closeModalOnBackdrop(event) {
             if (event.target.id === 'imageModal') {
                 closeModal();
             }
         }
 
-        // Close modal when pressing ESC key
+        // Keyboard Navigation (Arrow Keys & ESC)
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
+            const modal = document.getElementById('imageModal');
+            if (!modal.classList.contains('active')) return;
+
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
         });
+
+        // Touch Swipe Navigation for Mobile Devices
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const modalContainer = document.getElementById('imageModal');
+
+        modalContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        modalContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                nextImage(); // Swiped left
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                prevImage(); // Swiped right
+            }
+        }
     </script>
 
     <!-- Footer -->
