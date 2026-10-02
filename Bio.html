@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jehan-Fatima Forro - Profile & Impact</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#b2dff1',
+                            medium: '#4275a2',
+                            primary: '#08366b',
+                            gold: '#c59a4a',
+                            earth: '#8f7262',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Smooth backdrop blur animation for image lightbox modal */
+        #imageModal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #imageModal {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .modal-content {
+            transform: scale(0.95);
+            transition: transform 0.3s ease-in-out;
+        }
+        #imageModal.active .modal-content {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen relative selection:bg-brand-gold selection:text-brand-primary">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-md fixed w-full z-20 border-b-2 border-brand-primary">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-brand-primary hover:text-brand-medium font-bold flex items-center space-x-2 transition duration-150">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Portfolio</span>
+            </a>
+            <a href="mailto:jehan@thepoddigital.com" class="bg-brand-primary text-white text-sm px-4 py-2 rounded-full font-semibold hover:bg-brand-medium transition duration-150 shadow-sm">
+                Get In Touch
+            </a>
+        </div>
+    </nav>
+
+    <!-- Full-Screen Hero Header -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-16 px-6 text-white overflow-hidden bg-brand-primary">
+        <!-- Background Cover Photo -->
+        <img 
+            src="Jehan's Picture.jpg" 
+            alt="Jehan-Fatima Forro Leading ICT and Digital Transformation" 
+            class="absolute inset-0 w-full h-full object-cover object-center opacity-60 cursor-pointer hover:scale-105 transition-transform duration-700"
+            onclick="openModal(4)"
+        />
+        
+        <!-- Subtle Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/60 to-transparent pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-primary/80 via-brand-primary/40 to-transparent pointer-events-none"></div>
+
+        <!-- Header Content -->
+        <div class="container mx-auto max-w-4xl relative z-10">
+            <div class="flex flex-wrap items-center gap-3 mb-6">
+                <span class="bg-brand-gold text-brand-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
+                    ICT Leadership & Digital Transformation
+                </span>
+                <span class="text-brand-light text-sm font-semibold tracking-wide bg-brand-primary/50 px-3 py-1 rounded-full border border-brand-light/20 backdrop-blur-sm">
+                    AI-Ready ASEAN Master Trainer
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-md leading-tight">
+                Jehan-Fatima D. Forro
+            </h1>
+            <p class="text-lg md:text-xl text-brand-light max-w-2xl leading-relaxed drop-shadow-sm mb-6">
+                Founder of Tecpod Digital Marketing Services and President of Zamboanga ICT Council. Driving regional digital transformation, inclusive AI literacy, and technopreneurship across Western Mindanao.
+            </p>
+
+            <!-- Recognition Tag -->
+            <div class="inline-flex items-center space-x-2 bg-yellow-500/20 backdrop-blur-md border border-brand-gold/40 text-brand-gold px-4 py-2 rounded-lg text-sm font-semibold mb-8">
+                <i class="fa-solid fa-award"></i>
+                <span>President, Zamboanga ICT Council | Founder, Tecpod Digital</span>
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="#overview" class="inline-flex items-center space-x-2 bg-brand-gold text-brand-primary font-bold px-6 py-3 rounded-full hover:bg-white transition duration-200 shadow-lg">
+                    <span>Explore Profile & Roles</span>
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+                <button 
+                    onclick="openModal(4)" 
+                    class="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-medium px-5 py-3 rounded-full backdrop-blur-md border border-white/30 transition duration-200">
+                    <i class="fa-solid fa-expand"></i>
+                    <span>View Gallery</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <main id="overview" class="container mx-auto px-6 py-16 max-w-4xl flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            
+            <!-- Main Column -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Biography Section -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                    <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2">
+                        Biography & Leadership
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        <strong>Jehan-Fatima D. Forro</strong> is a distinguished leader in information and communications technology (ICT) in Zamboanga City and a passionate advocate for inclusive, future-ready education across the Philippines.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        With more than a decade of experience in digital transformation, social innovation, and community building, she has spearheaded initiatives that bridge technology and education—training teachers, mentoring youth, and helping institutions embrace digital and AI literacy.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Her mission focuses on empowering learners of all ages, with a strong emphasis on enabling women entrepreneurs to adapt and succeed in an evolving global digital economy.
+                    </p>
+                </div>
+
+                <!-- Key Leadership Roles & Initiatives -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                    <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2">
+                        Leadership & Institutional Scope
+                    </h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Role 1 -->
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-primary flex items-center justify-between">
+                                <span>President — Zamboanga ICT Council</span>
+                            </h3>
+                            <ul class="list-disc list-inside text-gray-600 text-sm mt-2 space-y-1.5 leading-relaxed">
+                                <li>Spearheads regional technological and economic development initiatives driving digital transformation across the ZamBasulta region.</li>
+                                <li>Directs community-led events, capacity-building programs, AI roadmapping workshops, and Technopreneurship Bootcamps.</li>
+                                <li>Promotes local tech talent and sustainable technopreneurship to accelerate the growth of Zamboanga Peninsula's digital economy.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Role 2 -->
+                        <div class="pt-4 border-t border-gray-100">
+                            <h3 class="text-lg font-bold text-brand-primary flex items-center justify-between">
+                                <span>Resource Person — DICT (RISTT / DJPH / SPARK)</span>
+                                <span class="text-xs bg-brand-light/40 text-brand-primary px-2 py-0.5 rounded font-normal">2018 – Present (8 yrs)</span>
+                            </h3>
+                            <p class="text-xs text-gray-500 mb-2">Implementing Institution: Department of Information and Communications Technology (DICT)</p>
+                            <ul class="list-disc list-inside text-gray-600 text-sm space-y-1.5 leading-relaxed">
+                                <li><strong>Digital Marketing & E-Commerce:</strong> Building foundational skills for local enterprises and online sellers.</li>
+                                <li><strong>Website Development with WordPress:</strong> Training individuals and teams in web deployment and CMS management.</li>
+                                <li><strong>General Virtual Assistance (GVA):</strong> Preparing regional remote talent for executive-level virtual roles.</li>
+                                <li><strong>Social Media Marketing:</strong> Delivering strategy-focused modules for brand positioning and growth.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Role 3 -->
+                        <div class="pt-4 border-t border-gray-100">
+                            <h3 class="text-lg font-bold text-brand-primary">
+                                <span>Founder — Tecpod Digital Marketing Services</span>
+                            </h3>
+                            <p class="text-gray-600 text-sm mt-1 leading-relaxed">
+                                Leads end-to-end agency business operations, drives strategic growth, and manages high-impact client accounts for a digital marketing agency specializing in comprehensive online solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Gallery Section -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                    <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2 flex justify-between items-center flex-wrap gap-2">
+                        <span>Leadership Highlights & Gallery</span>
+                        <span class="text-xs text-brand-medium bg-brand-light/30 px-2.5 py-1 rounded-full font-normal">
+                            <i class="fa-solid fa-images mr-1"></i> Click photo to launch carousel
+                        </span>
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Photo 1 -->
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(0)">
+                            <img src="Gallery/WordCamp PH 2026/IMG_3077.JPG" alt="Jehan Forro Speaking at AI & Tech Summit" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Photo 2 -->
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(1)">
+                            <img src="Gallery/WordCamp PH 2026/IMG_3044.JPG" alt="DICT Capacity Building & SPARK Workshop" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Photo 3 -->
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(2)">
+                            <img src="Gallery/image.png" alt="Zamboanga ICT Council Leadership Meeting" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Photo 4 -->
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(3)">
+                            <img src="Gallery/spark trainees 2026.jpg" alt="Mentoring Women Entrepreneurs in Digital Literacy" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Photo 5 -->
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer md:col-span-2" onclick="openModal(4)">
+                            <img src="Gallery/spark training.jpg" alt="Jehan-Fatima Forro ASEAN Master Trainer" class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Impact & Vision -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border-l-4 border-brand-gold border-t border-r border-b border-gray-100">
+                    <h2 class="text-2xl font-bold text-brand-primary mb-3 flex items-center space-x-2">
+                        <i class="fa-solid fa-lightbulb text-brand-gold"></i>
+                        <span>Core Impact & Vision</span>
+                    </h2>
+                    <p class="text-gray-700 leading-relaxed font-semibold mb-3">
+                        "Empowering people with digital, AI-ready skills is key to a more equitable and resilient future."
+                    </p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-2 leading-relaxed">
+                        <li>Advocating for inclusive, technology-driven growth and sustainable digital policy in regional hubs.</li>
+                        <li>Over 8 years of direct facilitation through DICT programs, empowering thousands of local talents.</li>
+                        <li>Fostering multi-sectoral collaborations between government, industry, and academic institutions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="space-y-6">
+                <!-- Meta Details -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-brand-primary mb-4 border-b border-gray-100 pb-2">
+                        Profile Meta
+                    </h3>
+                    
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Full Name</span>
+                            <span class="font-medium text-gray-700">Jehan-Fatima D. Forro</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Primary Title</span>
+                            <span class="font-medium text-gray-700">AI-Ready ASEAN Master Trainer</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Leadership Roles</span>
+                            <span class="font-medium text-gray-700">President (Zamboanga ICT Council)<br>Founder (Tecpod Digital)</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Key Domains</span>
+                            <span class="font-medium text-gray-700">AI Literacy, Digital Marketing, Technopreneurship</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Regional Focus</span>
+                            <span class="font-medium text-brand-gold font-semibold">ZamBasulta & Zamboanga Peninsula</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <span class="text-gray-400 block text-xs font-semibold uppercase mb-3">Contact & Socials</span>
+                        <div class="space-y-2.5 text-xs text-gray-600">
+                            <a href="mailto:jehan@thepoddigital.com" class="flex items-center space-x-2.5 hover:text-brand-medium transition">
+                                <i class="fa-solid fa-envelope text-brand-primary w-4"></i>
+                                <span>jehan@thepoddigital.com</span>
+                            </a>                           
+                            <a href="https://www.linkedin.com/in/jehanforro/" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2.5 hover:text-brand-medium transition">
+                                <i class="fa-brands fa-linkedin text-brand-primary w-4"></i>
+                                <span>LinkedIn Profile</span>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2.5 hover:text-brand-medium transition">
+                                <i class="fa-brands fa-facebook text-brand-primary w-4"></i>
+                                <span>Jehan Forro</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <span class="text-gray-400 block text-xs font-semibold uppercase mb-3">Core Expertise</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">AI Literacy</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Digital Transformation</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Technopreneurship</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">E-Commerce & WP</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Social Innovation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="bg-brand-light/30 p-6 rounded-xl border border-brand-light text-center">
+                    <h4 class="font-bold text-brand-primary mb-2">Connect & Collaborate</h4>
+                    <p class="text-xs text-gray-600 mb-4">Interested in AI roadmapping, ICT training programs, or digital marketing initiatives?</p>
+                    <a href="mailto:jehan@thepoddigital.com" class="block w-full bg-brand-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-brand-medium transition duration-200 shadow-sm">
+                        Send an Email
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Full-Screen Interactive Carousel Lightbox Modal -->
+    <div id="imageModal" class="fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4 bg-black/80 backdrop-blur-md" onclick="closeModalOnBackdrop(event)">
+        <div class="modal-content relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <!-- Modal Header / Controls -->
+            <div class="flex items-center justify-between p-4 bg-brand-primary text-white">
+                <div class="flex items-center space-x-3">
+                    <span id="modalCounter" class="bg-brand-gold text-brand-primary text-xs font-bold px-2.5 py-0.5 rounded-full">1 / 5</span>
+                </div>
+                <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition duration-200 flex-shrink-0">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Image Container with Navigation Overlay -->
+            <div class="relative bg-black/90 p-2 flex items-center justify-center min-h-[320px] max-h-[75vh] group">
+                <!-- Previous Button -->
+                <button onclick="prevImage()" class="absolute left-3 z-10 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center backdrop-blur-md transition duration-200 shadow-lg">
+                    <i class="fa-solid fa-chevron-left text-lg"></i>
+                </button>
+
+                <!-- Displayed Image -->
+                <img id="modalImage" src="" alt="Enlarged view" class="max-h-[70vh] w-auto max-w-full object-contain rounded-md transition-opacity duration-200">
+
+                <!-- Next Button -->
+                <button onclick="nextImage()" class="absolute right-3 z-10 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center backdrop-blur-md transition duration-200 shadow-lg">
+                    <i class="fa-solid fa-chevron-right text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Footer Controls -->
+            <div class="bg-gray-100 px-6 py-3 flex items-center justify-between">
+                <div class="text-xs text-gray-500 hidden sm:block">
+                    Use <span class="font-mono bg-gray-200 px-1.5 py-0.5 rounded">←</span> <span class="font-mono bg-gray-200 px-1.5 py-0.5 rounded">→</span> or swipe to navigate
+                </div>
+                <button onclick="closeModal()" class="bg-brand-primary text-white px-5 py-2 rounded-lg text-xs font-bold hover:bg-brand-medium transition duration-200 ml-auto">
+                    Close Preview
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Carousel Script -->
+    <script>
+        // Gallery Data Array
+        const galleryItems = [
+            'Gallery/JehanForro/IMG_KEYNOTE_SPEECH.jpg',
+            'Gallery/JehanForro/IMG_DICT_TRAINING.jpg',
+            'Gallery/JehanForro/IMG_ICT_COUNCIL.jpg',
+            'Gallery/JehanForro/IMG_WOMEN_ENTREPRENEURS.jpg',
+            'Gallery/JehanForro/IMG_JEHAN_COVER.jpg'
+        ];
+
+        let currentIndex = 0;
+
+        // Update modal elements according to current index
+        function updateModal() {
+            const imageSrc = galleryItems[currentIndex];
+            const modalImg = document.getElementById('modalImage');
+            const modalCounter = document.getElementById('modalCounter');
+
+            modalImg.style.opacity = '0';
+            setTimeout(() => {
+                modalImg.src = imageSrc;
+                modalCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+                modalImg.style.opacity = '1';
+            }, 100);
+        }
+
+        // Open modal at specific photo index
+        function openModal(index) {
+            currentIndex = index;
+            updateModal();
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('active');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        // Close modal
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Navigate Next
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            updateModal();
+        }
+
+        // Navigate Previous
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            updateModal();
+        }
+
+        // Backdrop click handler
+        function closeModalOnBackdrop(event) {
+            if (event.target.id === 'imageModal') {
+                closeModal();
+            }
+        }
+
+        // Keyboard Navigation (Arrow Keys & ESC)
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('imageModal');
+            if (!modal.classList.contains('active')) return;
+
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+        // Touch Swipe Navigation for Mobile Devices
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const modalContainer = document.getElementById('imageModal');
+
+        modalContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        modalContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                nextImage(); // Swiped left
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                prevImage(); // Swiped right
+            }
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-brand-primary text-white py-6 border-t border-brand-medium mt-auto">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2026 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
