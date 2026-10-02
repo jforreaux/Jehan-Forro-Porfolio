@@ -23,16 +23,11 @@
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #08366b 0%, #4275a2 100%);
-        }
-    </style>
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full z-10 border-b-2 border-brand-primary">
+    <nav class="bg-white/90 backdrop-blur-md shadow-md fixed w-full z-20 border-b-2 border-brand-primary">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-brand-primary hover:text-brand-medium font-bold flex items-center space-x-2 transition duration-150">
                 <i class="fa-solid fa-arrow-left"></i>
@@ -44,28 +39,53 @@
         </div>
     </nav>
 
-    <!-- Hero Header -->
-    <section class="gradient-bg text-white pt-32 pb-16 px-6">
-        <div class="container mx-auto max-w-4xl">
-            <div class="flex items-center space-x-3 mb-4">
-                <span class="bg-brand-gold text-brand-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    AI Literacy & Digital Enablement
+    <!-- Full-Screen Hero Header with Increased Photo Visibility -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-16 px-6 text-white overflow-hidden bg-brand-primary">
+        <!-- Background Cover Photo (Increased Visibility) -->
+        <img 
+            src="IMG20251202090801.jpg" 
+            alt="AI Training Workshop Cover" 
+            class="absolute inset-0 w-full h-full object-cover object-center opacity-60"
+        />
+        
+        <!-- Subtle Gradient Overlay for Contrast -->
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-primary/80 via-brand-primary/40 to-transparent"></div>
+
+        <!-- Header Content -->
+        <div class="container mx-auto max-w-4xl relative z-10">
+            <div class="flex flex-wrap items-center gap-3 mb-6">
+                <span class="bg-brand-gold text-brand-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
+                    AI Readiness Course
                 </span>
-                <span class="text-brand-light text-sm font-medium">
-                    ASEAN Initiative
+                <span class="text-brand-light text-sm font-semibold tracking-wide bg-brand-primary/50 px-3 py-1 rounded-full border border-brand-light/20">
+                    Limitless Lab & JCI Malagos Davao
                 </span>
             </div>
-            <h1 class="text-3xl md:text-5xl font-bold mb-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-md leading-tight">
                 AI Ready ASEAN Program
             </h1>
-            <p class="text-lg text-brand-light max-w-2xl">
-                Democratizing artificial intelligence skills across Southeast Asia through practical training, generative AI tool adoption, and workforce readiness workshops.
+            <p class="text-lg md:text-xl text-brand-light max-w-2xl leading-relaxed drop-shadow-sm mb-6">
+                Empowering students and local entrepreneurs through foundational and advanced AI literacy to drive digital economic opportunities.
             </p>
+
+            <!-- Recognition Tag -->
+            <div class="inline-flex items-center space-x-2 bg-yellow-500/20 backdrop-blur-md border border-brand-gold/40 text-brand-gold px-4 py-2 rounded-lg text-sm font-semibold mb-8">
+                <i class="fa-solid fa-trophy"></i>
+                <span>Honored with the Agung Award for Best JCI RISE Project</span>
+            </div>
+            
+            <div>
+                <a href="#overview" class="inline-flex items-center space-x-2 bg-brand-gold text-brand-primary font-bold px-6 py-3 rounded-full hover:bg-white transition duration-200 shadow-lg">
+                    <span>Explore Project Details</span>
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12 max-w-4xl flex-grow">
+    <main id="overview" class="container mx-auto px-6 py-16 max-w-4xl flex-grow">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
             
             <!-- Main Column -->
@@ -76,10 +96,13 @@
                         Project Overview
                     </h2>
                     <p class="text-gray-600 leading-relaxed mb-4">
-                        The AI Ready ASEAN Program is a regional capacity-building initiative aimed at bridging the artificial intelligence knowledge gap for youth, educators, and working professionals across ASEAN member states.
+                        As a <strong>Trainer</strong> for the <strong>AI Ready ASEAN Program</strong> implemented by <strong>Limitless Lab</strong>, I delivered the <em>AI Readiness Course</em> to equip youth and small business owners with essential artificial intelligence skills.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        In collaboration with <strong>JCI Malagos Davao</strong> on <strong>Project WISE (Work Smarter, Market Smarter with AI)</strong>, the initiative focused on providing hands-on AI training to students and local entrepreneurs, generating new digital economic opportunities across the community.
                     </p>
                     <p class="text-gray-600 leading-relaxed">
-                        By combining foundational AI literacy with hands-on practice in prompt engineering, automated workflows, and ethical AI usage, the program empowers local communities to integrate modern AI solutions into everyday productivity and administrative operations.
+                        By combining foundational and advanced AI literacy with practical marketing and productivity workflows, participants gained actionable skills to innovate their everyday operations.
                     </p>
                 </div>
 
@@ -89,13 +112,12 @@
                         Key Deliverables & Facilitation
                     </h2>
                     <ul class="list-disc list-inside text-gray-600 space-y-3 leading-relaxed">
-                        <li><strong>AI Literacy Workshops:</strong> Led interactive training modules covering foundational AI concepts, prompt design, and practical workplace applications.</li>
-                        <li><strong>Generative AI Tool Training:</strong> Guided participants in leveraging large language models and automation tools to streamline document creation and data analysis.</li>
-                        <li><strong>Ethical AI Frameworks:</strong> Facilitated discussions on responsible AI adoption, data privacy, and mitigation of algorithmic bias.</li>
-                        <li><strong>Curriculum Adaptation:</strong> Developed localized learning materials and exercise templates for non-technical audiences and community leaders.</li>
+                        <li><strong>Dynamic Training Workshops:</strong> Facilitated interactive sessions empowering students and entrepreneurs with both foundational and advanced AI literacy.</li>
+                        <li><strong>Project WISE Collaboration:</strong> Partnered with JCI Malagos Davao on "Work Smarter, Market Smarter with AI" to bring AI productivity strategies to small business owners.</li>
+                        <li><strong>Digital Economic Empowerment:</strong> Guided participants on leveraging AI tools to optimize local business marketing, automate operations, and expand digital reach.</li>
+                        <li><strong>Ethical & Practical AI Integration:</strong> Educated learners on prompt design, responsible AI usage, and real-world implementation across academic and business workflows.</li>
                     </ul>
                 </div>
-
                 <!-- Photo Gallery Section -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                     <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2 flex justify-between items-center">
@@ -105,28 +127,35 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <!-- Photo 1 -->
                         <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="https://via.placeholder.com/600x400?text=Workshop+Session" alt="Workshop Session" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                            <img src="IMG20250813163115.jpg" alt="Workshop Session" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
                             <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                                 <span class="text-white text-xs font-semibold">Interactive Workshop Facilitation</span>
                             </div>
                         </div>
                         <!-- Photo 2 -->
                         <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="https://via.placeholder.com/600x400?text=Hands-on+Training" alt="Hands-on Training" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                            <img src="IMG20251013104345.jpg" alt="Hands-on Training" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
                             <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                                 <span class="text-white text-xs font-semibold">Hands-on AI Tool Practice</span>
                             </div>
                         </div>
                         <!-- Photo 3 -->
                         <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="https://via.placeholder.com/600x400?text=Participant+Mentorship" alt="Participant Mentorship" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                            <img src="IMG20251202115749.jpg" alt="Participant Mentorship" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
                             <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                                 <span class="text-white text-xs font-semibold">Group Collaboration & Exercises</span>
                             </div>
                         </div>
                         <!-- Photo 4 -->
                         <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="https://via.placeholder.com/600x400?text=Program+Certifications" alt="Program Certifications" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                            <img src="IMG20251204151035.jpg" alt="Program Certifications" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                            <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                                <span class="text-white text-xs font-semibold">Certificates & Program Conclusion</span>
+                            </div>
+                        </div>
+                        <!-- Photo 5 -->
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
+                            <img src="IMG20251202090801.jpg" alt="Program Certifications" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
                             <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                                 <span class="text-white text-xs font-semibold">Certificates & Program Conclusion</span>
                             </div>
@@ -134,18 +163,19 @@
                     </div>
                 </div>
 
-                <!-- Results & Impact -->
+                <!-- Results & Award Recognition -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border-l-4 border-brand-gold border-t border-r border-b border-gray-100">
-                    <h2 class="text-2xl font-bold text-brand-primary mb-3">
-                        Results & Measured Impact
+                    <h2 class="text-2xl font-bold text-brand-primary mb-3 flex items-center space-x-2">
+                        <i class="fa-solid fa-award text-brand-gold"></i>
+                        <span>Recognition & Measured Impact</span>
                     </h2>
-                    <p class="text-gray-700 leading-relaxed font-medium mb-3">
-                        Expanded regional AI fluency and increased efficiency across participant workflows.
+                    <p class="text-gray-700 leading-relaxed font-semibold mb-3">
+                        Honored with the <span class="text-brand-primary font-bold">Agung Award for Best JCI RISE Project</span> for outstanding community impact and innovation.
                     </p>
-                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                        <li>Trained hundreds of local participants on essential AI productivity tools and prompt engineering techniques.</li>
-                        <li>Enabled small business owners and students to automate repetitive administrative and content generation tasks.</li>
-                        <li>Promoted responsible and ethically sound AI adoption guidelines tailored for regional stakeholders.</li>
+                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-2 leading-relaxed">
+                        <li>Empowered students and local entrepreneurs with actionable skills in AI productivity and digital marketing.</li>
+                        <li>Created new digital economic opportunities for small businesses by enabling them to "Work Smarter, Market Smarter with AI."</li>
+                        <li>Fostered community-wide AI literacy through strategic collaboration with JCI Malagos Davao and Limitless Lab.</li>
                     </ul>
                 </div>
             </div>
@@ -161,30 +191,38 @@
                     <div class="space-y-4 text-sm">
                         <div>
                             <span class="text-gray-400 block text-xs font-semibold uppercase">Role</span>
-                            <span class="font-medium text-gray-700">Lead Trainer & Facilitator</span>
+                            <span class="font-medium text-gray-700">Trainer</span>
                         </div>
                         <div>
-                            <span class="text-gray-400 block text-xs font-semibold uppercase">Target Audience</span>
-                            <span class="font-medium text-gray-700">Youth, Educators, & Professionals</span>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Course</span>
+                            <span class="font-medium text-gray-700">AI Readiness</span>
                         </div>
                         <div>
-                            <span class="text-gray-400 block text-xs font-semibold uppercase">Scope</span>
-                            <span class="font-medium text-gray-700">Digital Upskilling & AI Literacy</span>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Implementing Institution</span>
+                            <span class="font-medium text-gray-700">Limitless Lab</span>
                         </div>
                         <div>
-                            <span class="text-gray-400 block text-xs font-semibold uppercase">Location</span>
-                            <span class="font-medium text-gray-700">Southeast Asia / Philippines</span>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Partner Organization</span>
+                            <span class="font-medium text-gray-700">JCI Malagos Davao (Project WISE)</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Date & Duration</span>
+                            <span class="font-medium text-gray-700">July – December 2025 (6 months)</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Award / Recognition</span>
+                            <span class="font-medium text-brand-gold font-semibold">Agung Award (Best JCI RISE Project)</span>
                         </div>
                     </div>
 
                     <div class="mt-6 pt-4 border-t border-gray-100">
                         <span class="text-gray-400 block text-xs font-semibold uppercase mb-3">Skills & Tools Used</span>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Generative AI</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">AI Literacy</span>
                             <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Prompt Engineering</span>
-                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Workshop Facilitation</span>
-                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Digital Productivity</span>
-                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">AI Ethics</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Digital Marketing</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Project WISE</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Workshop Training</span>
                         </div>
                     </div>
                 </div>
