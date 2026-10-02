@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FELTA Educational Technology Initiatives - Project Details</title>
+    <title>Digital Transformation for DepEd Teachers - Project Details</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,118 +23,194 @@
             }
         }
     </script>
+    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #08366b 0%, #4275a2 100%);
+        /* Smooth backdrop blur animation for image lightbox modal */
+        #imageModal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #imageModal {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .modal-content {
+            transform: scale(0.95);
+            transition: transform 0.3s ease-in-out;
+        }
+        #imageModal.active .modal-content {
+            transform: scale(1);
         }
     </style>
 </head>
-<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen relative selection:bg-brand-gold selection:text-brand-primary">
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full z-10 border-b-2 border-brand-primary">
+    <!-- Navigation Bar -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-md fixed w-full z-20 border-b-2 border-brand-primary">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-brand-primary hover:text-brand-medium font-bold flex items-center space-x-2 transition duration-150">
                 <i class="fa-solid fa-arrow-left"></i>
                 <span>Back to Portfolio</span>
             </a>
-            <a href="index.html#contact" class="bg-brand-primary text-white text-sm px-4 py-2 rounded-full font-semibold hover:bg-brand-medium transition duration-150">
+            <a href="index.html#contact" class="bg-brand-primary text-white text-sm px-4 py-2 rounded-full font-semibold hover:bg-brand-medium transition duration-150 shadow-sm">
                 Get In Touch
             </a>
         </div>
     </nav>
 
-    <!-- Hero Header -->
-    <section class="gradient-bg text-white pt-32 pb-16 px-6">
-        <div class="container mx-auto max-w-4xl">
-            <div class="flex items-center space-x-3 mb-4">
-                <span class="bg-brand-gold text-brand-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    Educational Technology & STEM
+    <!-- Full-Screen Hero Header -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-16 px-6 text-white overflow-hidden bg-brand-primary">
+        <!-- Background Cover Photo -->
+        <img 
+            src="Gallery/FELTA/IMG_3550.jpeg" 
+            alt="Digital Transformation Training Workshop Cover" 
+            class="absolute inset-0 w-full h-full object-cover object-center opacity-60 cursor-pointer hover:scale-105 transition-transform duration-700"
+            onclick="openModal(0)"
+        />
+        
+        <!-- Subtle Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/60 to-transparent pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-primary/80 via-brand-primary/40 to-transparent pointer-events-none"></div>
+
+        <!-- Header Content -->
+        <div class="container mx-auto max-w-4xl relative z-10">
+            <div class="flex flex-wrap items-center gap-3 mb-6">
+                <span class="bg-brand-gold text-brand-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
+                    Digital Transformation Program
                 </span>
-                <span class="text-brand-light text-sm font-medium">
-                    FELTA Multi-Media Partnership
+                <span class="text-brand-light text-sm font-semibold tracking-wide bg-brand-primary/50 px-3 py-1 rounded-full border border-brand-light/20 backdrop-blur-sm">
+                    FELTA Multi-Media Inc. & DepEd Taguig
                 </span>
             </div>
-            <h1 class="text-3xl md:text-5xl font-bold mb-4">
-                FELTA Educational Technology Initiatives
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-md leading-tight">
+                Digital Transformation for DepEd Teachers
             </h1>
-            <p class="text-lg text-brand-light max-w-2xl">
-                Advancing ed-tech solutions, interactive STEM learning, and school-wide digital transformations through specialized teacher training and curriculum integration.
+            <p class="text-lg md:text-xl text-brand-light max-w-2xl leading-relaxed drop-shadow-sm mb-6">
+                Empowering public school educators across Taguig City with practical digital skills and modern technology integration to elevate classroom instruction.
             </p>
+
+            <!-- Impact Tag -->
+            <div class="inline-flex items-center space-x-2 bg-blue-500/20 backdrop-blur-md border border-brand-light/40 text-brand-light px-4 py-2 rounded-lg text-sm font-semibold mb-8">
+                <i class="fa-solid fa-users"></i>
+                <span>Trained 2,215+ Public School Educators</span>
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="#overview" class="inline-flex items-center space-x-2 bg-brand-gold text-brand-primary font-bold px-6 py-3 rounded-full hover:bg-white transition duration-200 shadow-lg">
+                    <span>Explore Project Details</span>
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+                <button 
+                    onclick="openModal(0)" 
+                    class="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-medium px-5 py-3 rounded-full backdrop-blur-md border border-white/30 transition duration-200">
+                    <i class="fa-solid fa-expand"></i>
+                    <span>View Gallery</span>
+                </button>
+            </div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12 max-w-4xl flex-grow">
+    <!-- Main Content Grid -->
+    <main id="overview" class="container mx-auto px-6 py-16 max-w-4xl flex-grow">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
             
             <!-- Main Column -->
             <div class="lg:col-span-2 space-y-8">
-                <!-- Overview -->
+                <!-- Overview Section -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                     <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2">
                         Project Overview
                     </h2>
                     <p class="text-gray-600 leading-relaxed mb-4">
-                        In collaboration with FELTA Multi-Media Inc., a pioneer in educational technology in the Philippines, this initiative focuses on modernizing school classrooms through hands-on STEM tools, robotics education, and interactive learning media.
+                        Served as part of a specialized pool of trainers for <strong>FELTA Multi-Media Inc.</strong> during the <strong>Digital Transformation Course</strong> for the Department of Education (DepEd) educators in the City of Taguig.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        The program delivered targeted digital literacy training to <strong>over 2,215 DepEd teachers</strong>, preparing them to integrate modern instructional technologies, digital tools, and interactive media directly into public school classrooms.
                     </p>
                     <p class="text-gray-600 leading-relaxed">
-                        The program bridges modern ed-tech solutions with school curricula, equipping educators with practical skills to integrate digital tools, robotic kits, and interactive software into everyday teaching.
+                        By bridging digital divides in education, the program enhanced overall teaching confidence and enabled educators to foster tech-enabled learning environments for thousands of students.
                     </p>
                 </div>
 
-                <!-- Key Deliverables -->
+                <!-- Key Deliverables Section -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                     <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2">
                         Key Deliverables & Facilitation
                     </h2>
                     <ul class="list-disc list-inside text-gray-600 space-y-3 leading-relaxed">
-                        <li><strong>STEM & Robotics Workshops:</strong> Facilitated hands-on training for educators on implementing robotics and interactive learning platforms.</li>
-                        <li><strong>Curriculum Integration:</strong> Designed framework guides to seamlessly embed modern educational technology into school learning modules.</li>
-                        <li><strong>Resource Speaker Delivery:</strong> Conducted large-scale webinars and live demonstrations highlighting school-wide tech transformation.</li>
-                        <li><strong>Technical Consultation:</strong> Assisted educational institutions in evaluating and deploying learning technology tools suited for their students.</li>
+                        <li><strong>Large-Scale Educator Training:</strong> Facilitated hands-on digital skills modules for a cohort exceeding 2,215 public school teachers.</li>
+                        <li><strong>Classroom Tech Integration:</strong> Guided educators on incorporating educational media, digital tools, and interactive solutions into daily lesson planning.</li>
+                        <li><strong>Digital Literacy Capacity Building:</strong> Strengthened teacher competence across fundamental and intermediate digital tools for classroom management and student engagement.</li>
+                        <li><strong>Collaborative Training Delivery:</strong> Worked seamlessly within FELTA's trainer pool to ensure consistent, high-impact facilitation across multiple workshop tracks.</li>
                     </ul>
                 </div>
 
                 <!-- Photo Gallery Section -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-                    <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2 flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2 flex justify-between items-center flex-wrap gap-2">
                         <span>Project Highlights & Gallery</span>
-                        <span class="text-xs text-gray-400 font-normal">Click or replace image sources below</span>
+                        <span class="text-xs text-brand-medium bg-brand-light/30 px-2.5 py-1 rounded-full font-normal">
+                            <i class="fa-solid fa-images mr-1"></i> Click photo to launch carousel
+                        </span>
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <!-- Photo 1 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="https://via.placeholder.com/600x400?text=Robotics+Workshop" alt="Robotics Workshop" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(0)">
+                            <img src="Gallery/FELTA/IMG_3550.jpeg" alt="Interactive Classroom Training" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
+                                </div>
+                            </div>
                         </div>
+
                         <!-- Photo 2 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="https://via.placeholder.com/600x400?text=Teacher+Training" alt="Teacher Training" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(1)">
+                            <img src="Gallery/FELTA/image.png" alt="Hands-on Digital Skills Workshop" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
+                                </div>
+                            </div>
                         </div>
+
                         <!-- Photo 3 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="https://via.placeholder.com/600x400?text=STEM+Demonstration" alt="STEM Demonstration" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(2)">
+                            <img src="Gallery/FELTA/IMG20250401134643.jpg" alt="Teacher Mentorship and Support" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
+                                </div>
+                            </div>
                         </div>
+
                         <!-- Photo 4 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="https://via.placeholder.com/600x400?text=EdTech+Exhibition" alt="EdTech Exhibition" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(3)">
+                            <img src="Gallery/FELTA/485343483_2093057091138380_643121438479031169_n.jpg" alt="Technology Integration Demonstration" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                                <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-expand text-lg"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Results & Impact -->
+                <!-- Results & Impact Recognition -->
                 <div class="bg-white p-8 rounded-xl shadow-sm border-l-4 border-brand-gold border-t border-r border-b border-gray-100">
-                    <h2 class="text-2xl font-bold text-brand-primary mb-3">
-                        Results & Measured Impact
+                    <h2 class="text-2xl font-bold text-brand-primary mb-3 flex items-center space-x-2">
+                        <i class="fa-solid fa-chart-line text-brand-gold"></i>
+                        <span>Program Impact</span>
                     </h2>
-                    <p class="text-gray-700 leading-relaxed font-medium mb-3">
-                        Transformed classroom tech integration and empowered educators across various academic institutions.
+                    <p class="text-gray-700 leading-relaxed font-semibold mb-3">
+                        Successfully upskilled <span class="text-brand-primary font-bold">2,215+ public school teachers</span> in the City of Taguig.
                     </p>
-                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                        <li>Trained hundreds of teachers and academic coordinators in STEM/robotics implementation.</li>
-                        <li>Accelerated digital tool adoption in public and private school learning environments.</li>
-                        <li>Elevated student engagement through interactive ed-tech methodologies and competitive robotics training.</li>
+                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-2 leading-relaxed">
+                        <li>Accelerated public school digital transformation through practical technology adoption.</li>
+                        <li>Empowered educators to design interactive and tech-enhanced learning experiences.</li>
+                        <li>Strengthened DepEd Taguig's institutional capacity for modern educational technology integration.</li>
                     </ul>
                 </div>
             </div>
@@ -149,39 +226,47 @@
                     <div class="space-y-4 text-sm">
                         <div>
                             <span class="text-gray-400 block text-xs font-semibold uppercase">Role</span>
-                            <span class="font-medium text-gray-700">Resource Speaker & EdTech Trainer</span>
+                            <span class="font-medium text-gray-700">Trainer</span>
                         </div>
                         <div>
-                            <span class="text-gray-400 block text-xs font-semibold uppercase">Target Audience</span>
-                            <span class="font-medium text-gray-700">Educators / School Administrators / Students</span>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Course</span>
+                            <span class="font-medium text-gray-700">Digital Transformation</span>
                         </div>
                         <div>
-                            <span class="text-gray-400 block text-xs font-semibold uppercase">Scope</span>
-                            <span class="font-medium text-gray-700">Educational Technology & STEM Enablement</span>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Implementing Institution</span>
+                            <span class="font-medium text-gray-700">FELTA Multi-Media Inc.</span>
                         </div>
                         <div>
-                            <span class="text-gray-400 block text-xs font-semibold uppercase">Location</span>
-                            <span class="font-medium text-gray-700">Philippines (Nationwide)</span>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Partner / Recipient</span>
+                            <span class="font-medium text-gray-700">DepEd Educators (City of Taguig)</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Date & Duration</span>
+                            <span class="font-medium text-gray-700">March 2024</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block text-xs font-semibold uppercase">Reach</span>
+                            <span class="font-medium text-brand-gold font-semibold">2,215+ Educators Trained</span>
                         </div>
                     </div>
 
                     <div class="mt-6 pt-4 border-t border-gray-100">
                         <span class="text-gray-400 block text-xs font-semibold uppercase mb-3">Skills & Tools Used</span>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">EdTech</span>
-                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">STEM / Robotics</span>
-                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Teacher Training</span>
                             <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Digital Literacy</span>
-                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Public Speaking</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">EdTech Integration</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Teacher Training</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Classroom Tech</span>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Workshop Facilitation</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Call to Action -->
                 <div class="bg-brand-light/30 p-6 rounded-xl border border-brand-light text-center">
-                    <h4 class="font-bold text-brand-primary mb-2">Need EdTech Training for Your School?</h4>
-                    <p class="text-xs text-gray-600 mb-4">Let's collaborate to bring interactive STEM and robotics solutions to your institution.</p>
-                    <a href="index.html#contact" class="block w-full bg-brand-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-brand-medium transition duration-200">
+                    <h4 class="font-bold text-brand-primary mb-2">Need an EdTech Training Specialist?</h4>
+                    <p class="text-xs text-gray-600 mb-4">Let's collaborate to deliver impactful digital transformation programs for your institution.</p>
+                    <a href="index.html#contact" class="block w-full bg-brand-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-brand-medium transition duration-200 shadow-sm">
                         Get In Touch
                     </a>
                 </div>
@@ -189,6 +274,144 @@
 
         </div>
     </main>
+
+    <!-- Full-Screen Interactive Carousel Lightbox Modal -->
+    <div id="imageModal" class="fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4 bg-black/80 backdrop-blur-md" onclick="closeModalOnBackdrop(event)">
+        <div class="modal-content relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <!-- Modal Header / Controls -->
+            <div class="flex items-center justify-between p-4 bg-brand-primary text-white">
+                <div class="flex items-center space-x-3">
+                    <span id="modalCounter" class="bg-brand-gold text-brand-primary text-xs font-bold px-2.5 py-0.5 rounded-full">1 / 5</span>
+                </div>
+                <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition duration-200 flex-shrink-0">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Image Container with Navigation Overlay -->
+            <div class="relative bg-black/90 p-2 flex items-center justify-center min-h-[320px] max-h-[75vh] group">
+                <!-- Previous Button -->
+                <button onclick="prevImage()" class="absolute left-3 z-10 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center backdrop-blur-md transition duration-200 shadow-lg">
+                    <i class="fa-solid fa-chevron-left text-lg"></i>
+                </button>
+
+                <!-- Displayed Image -->
+                <img id="modalImage" src="" alt="Enlarged view" class="max-h-[70vh] w-auto max-w-full object-contain rounded-md transition-opacity duration-200">
+
+                <!-- Next Button -->
+                <button onclick="nextImage()" class="absolute right-3 z-10 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center backdrop-blur-md transition duration-200 shadow-lg">
+                    <i class="fa-solid fa-chevron-right text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Footer Controls -->
+            <div class="bg-gray-100 px-6 py-3 flex items-center justify-between">
+                <div class="text-xs text-gray-500 hidden sm:block">
+                    Use <span class="font-mono bg-gray-200 px-1.5 py-0.5 rounded">←</span> <span class="font-mono bg-gray-200 px-1.5 py-0.5 rounded">→</span> or swipe to navigate
+                </div>
+                <button onclick="closeModal()" class="bg-brand-primary text-white px-5 py-2 rounded-lg text-xs font-bold hover:bg-brand-medium transition duration-200 ml-auto">
+                    Close Preview
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Carousel Script -->
+    <script>
+        // Gallery Data Array - Update path references as needed
+        const galleryItems = [
+            'Gallery/FELTA/photo1.jpg',
+            'Gallery/FELTA/photo2.jpg',
+            'Gallery/FELTA/photo3.jpg',
+            'Gallery/FELTA/photo4.jpg',
+            'Gallery/FELTA/photo5.jpg'
+        ];
+
+        let currentIndex = 0;
+
+        // Update modal elements according to current index
+        function updateModal() {
+            const imageSrc = galleryItems[currentIndex];
+            const modalImg = document.getElementById('modalImage');
+            const modalCounter = document.getElementById('modalCounter');
+
+            modalImg.style.opacity = '0';
+            setTimeout(() => {
+                modalImg.src = imageSrc;
+                modalCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+                modalImg.style.opacity = '1';
+            }, 100);
+        }
+
+        // Open modal at specific photo index
+        function openModal(index) {
+            currentIndex = index;
+            updateModal();
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('active');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        // Close modal
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Navigate Next
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            updateModal();
+        }
+
+        // Navigate Previous
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            updateModal();
+        }
+
+        // Backdrop click handler
+        function closeModalOnBackdrop(event) {
+            if (event.target.id === 'imageModal') {
+                closeModal();
+            }
+        }
+
+        // Keyboard Navigation (Arrow Keys & ESC)
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('imageModal');
+            if (!modal.classList.contains('active')) return;
+
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+        // Touch Swipe Navigation for Mobile Devices
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const modalContainer = document.getElementById('imageModal');
+
+        modalContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        modalContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                nextImage(); // Swiped left
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                prevImage(); // Swiped right
+            }
+        }
+    </script>
 
     <!-- Footer -->
     <footer class="bg-brand-primary text-white py-6 border-t border-brand-medium mt-auto">
