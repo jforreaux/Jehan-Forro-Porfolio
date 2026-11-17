@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jehan Forro - Profile & Impact</title>
+    <!-- Favicon for Browser Tab -->
+    <link rel="icon" type="image/png" href="Gallery/Logo.png">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -50,11 +52,11 @@
     <!-- Navigation Bar -->
     <nav class="bg-white/90 backdrop-blur-md shadow-md fixed w-full z-20 border-b-2 border-brand-primary">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-brand-primary hover:text-brand-medium font-bold flex items-center space-x-2 transition duration-150">
-                <i class="fa-solid fa-arrow-left"></i>
-                <span>Back to Portfolio</span>
+            <a href="index.html" class="text-2xl font-bold text-brand-primary flex items-center gap-3 hover:text-brand-medium transition duration-150">
+                <img src="Gallery/Logo.png" alt="Jehan-Fatima Forro Logo" class="h-12 w-12 object-contain rounded-full">
+                <span>Jehan Forro</span>
             </a>
-            <a href="mailto:jehan@thepoddigital.com" class="bg-brand-primary text-white text-sm px-4 py-2 rounded-full font-semibold hover:bg-brand-medium transition duration-150 shadow-sm">
+            <a href="mailto:jehan@thepoddigital.com?subject=Inquiry%20or%20Feedback" class="bg-brand-primary text-white text-sm px-4 py-2 rounded-full font-semibold hover:bg-brand-medium transition duration-150 shadow-sm">
                 Get In Touch
             </a>
         </div>
@@ -157,12 +159,12 @@
                         <div class="pt-4 border-t border-gray-100">
                             <h3 class="text-lg font-bold text-brand-primary flex items-center justify-between">
                                 <span>Resource Person — DICT (RISTT / DJPH / SPARK)</span>
-                                <span class="text-xs bg-brand-light/40 text-brand-primary px-2 py-0.5 rounded font-normal">2018 – Present (8 yrs)</span>
+                                <span class="text-xs bg-brand-light/40 text-brand-primary px-2 py-0.5 rounded font-normal">2016 – Present (10 yrs)</span>
                             </h3>
                             <p class="text-xs text-gray-500 mb-2">Implementing Institution: Department of Information and Communications Technology (DICT)</p>
                             <ul class="list-disc list-inside text-gray-600 text-sm space-y-1.5 leading-relaxed">
                                 <li><strong>Digital Marketing & E-Commerce:</strong> Building foundational skills for local enterprises and online sellers.</li>
-                                <li><strong>Website Development with WordPress:</strong> Training individuals and teams in web deployment and CMS management.</li>
+                                <li><strong>Website Development:</strong> Training individuals and teams in web deployment and modern frameworks.</li>
                                 <li><strong>General Virtual Assistance (GVA):</strong> Preparing regional remote talent for executive-level virtual roles.</li>
                                 <li><strong>Social Media Marketing:</strong> Delivering strategy-focused modules for brand positioning and growth.</li>
                             </ul>
@@ -188,8 +190,9 @@
                             <i class="fa-solid fa-images mr-1"></i> Click photo to launch carousel
                         </span>
                     </h2>
+                    
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- Photo 1 -->
+                        <!-- Photo 1 (Index 0) -->
                         <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(0)">
                             <img src="Gallery/Leadership/image.png" alt="Jehan Forro Speaking at AI & Tech Summit" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
                             <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
@@ -199,7 +202,7 @@
                             </div>
                         </div>
 
-                        <!-- Photo 2 -->
+                        <!-- Photo 2 (Index 1) -->
                         <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(1)">
                             <img src="Gallery/Leadership/img_0711.PNG" alt="DICT Capacity Building & SPARK Workshop" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
                             <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
@@ -209,7 +212,7 @@
                             </div>
                         </div>
 
-                        <!-- Photo 3 -->
+                        <!-- Photo 3 (Index 2) -->
                         <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(2)">
                             <img src="Gallery/Leadership/img_1242.PNG" alt="Zamboanga ICT Council Leadership Meeting" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
                             <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
@@ -219,7 +222,7 @@
                             </div>
                         </div>
 
-                        <!-- Photo 4 -->
+                        <!-- Photo 4 (Index 3) -->
                         <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(3)">
                             <img src="Gallery/Leadership/img_1998.PNG" alt="Mentoring Women Entrepreneurs in Digital Literacy" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
                             <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
@@ -229,7 +232,7 @@
                             </div>
                         </div>
 
-                        <!-- Photo 5 -->
+                        <!-- Photo 5 (Index 4) -->
                         <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer md:col-span-2" onclick="openModal(4)">
                             <img src="Gallery/Leadership/img_2027.PNG" alt="Jehan-Fatima Forro ASEAN Master Trainer" class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
@@ -239,8 +242,8 @@
                             </div>
                         </div>
 
-                        <!-- Photo 6 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer md:col-span-2" onclick="openModal(4)">
+                        <!-- Photo 6 (Index 5) -->
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer md:col-span-2" onclick="openModal(5)">
                             <img src="Gallery/Leadership/img_4343.PNG" alt="Jehan-Fatima Forro ASEAN Master Trainer" class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
                                 <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
@@ -302,7 +305,7 @@
                     <div class="mt-6 pt-4 border-t border-gray-100">
                         <span class="text-gray-400 block text-xs font-semibold uppercase mb-3">Contact & Socials</span>
                         <div class="space-y-2.5 text-xs text-gray-600">
-                            <a href="mailto:jehan@thepoddigital.com" class="flex items-center space-x-2.5 hover:text-brand-medium transition">
+                            <a href="mailto:jehan@thepoddigital.com?subject=Inquiry%20or%20Feedback" class="flex items-center space-x-2.5 hover:text-brand-medium transition">
                                 <i class="fa-solid fa-envelope text-brand-primary w-4"></i>
                                 <span>jehan@thepoddigital.com</span>
                             </a>                           
@@ -333,7 +336,7 @@
                 <div class="bg-brand-light/30 p-6 rounded-xl border border-brand-light text-center">
                     <h4 class="font-bold text-brand-primary mb-2">Connect & Collaborate</h4>
                     <p class="text-xs text-gray-600 mb-4">Interested in AI roadmapping, ICT training programs, or digital marketing initiatives?</p>
-                    <a href="mailto:jehan@thepoddigital.com" class="block w-full bg-brand-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-brand-medium transition duration-200 shadow-sm">
+                    <a href="mailto:jehan@thepoddigital.com?subject=Inquiry%20or%20Feedback" class="block w-full bg-brand-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-brand-medium transition duration-200 shadow-sm">
                         Send an Email
                     </a>
                 </div>
@@ -348,7 +351,7 @@
             <!-- Modal Header / Controls -->
             <div class="flex items-center justify-between p-4 bg-brand-primary text-white">
                 <div class="flex items-center space-x-3">
-                    <span id="modalCounter" class="bg-brand-gold text-brand-primary text-xs font-bold px-2.5 py-0.5 rounded-full">1 / 5</span>
+                    <span id="modalCounter" class="bg-brand-gold text-brand-primary text-xs font-bold px-2.5 py-0.5 rounded-full">1 / 6</span>
                 </div>
                 <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition duration-200 flex-shrink-0">
                     <i class="fa-solid fa-xmark"></i>
@@ -385,13 +388,14 @@
 
     <!-- Lightbox Carousel Script -->
     <script>
-        // Gallery Data Array
+        // Gallery Data Array - Perfectly matched to the 6 photos in the grid above
         const galleryItems = [
-            'Gallery/JehanForro/IMG_KEYNOTE_SPEECH.jpg',
-            'Gallery/JehanForro/IMG_DICT_TRAINING.jpg',
-            'Gallery/JehanForro/IMG_ICT_COUNCIL.jpg',
-            'Gallery/JehanForro/IMG_WOMEN_ENTREPRENEURS.jpg',
-            'Gallery/JehanForro/IMG_JEHAN_COVER.jpg'
+            'Gallery/Leadership/image.png',
+            'Gallery/Leadership/img_0711.PNG',
+            'Gallery/Leadership/img_1242.PNG',
+            'Gallery/Leadership/img_1998.PNG',
+            'Gallery/Leadership/img_2027.PNG',
+            'Gallery/Leadership/img_4343.PNG'
         ];
 
         let currentIndex = 0;
