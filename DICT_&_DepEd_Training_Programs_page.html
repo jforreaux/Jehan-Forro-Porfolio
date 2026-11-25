@@ -68,7 +68,7 @@
             src="Gallery/DICT Trainings/348eae50-1eb9-47f5-a918-7d8a9dd7fc45.jpg" 
             alt="DICT Training Program Cover" 
             class="absolute inset-0 w-full h-full object-cover object-center opacity-60 cursor-pointer hover:scale-105 transition-transform duration-700"
-            onclick="openModal(0)"
+            onclick="openModal(5)"
         />
         
         <!-- Subtle Gradient Overlay -->
@@ -207,6 +207,13 @@
                                 <span class="text-white text-xs font-semibold"><i class="fa-solid fa-expand mr-1"></i> View Photo</span>
                             </div>
                         </div>
+                        <!-- Photo 6 -->
+                        <div onclick="openModal(5)" class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer">
+                            <img src="Gallery/DICT Trainings/348eae50-1eb9-47f5-a918-7d8a9dd7fc45.jpg" alt="DICT Training Session 6" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                            <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                                <span class="text-white text-xs font-semibold"><i class="fa-solid fa-expand mr-1"></i> View Photo</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -284,7 +291,7 @@
             <!-- Modal Header / Controls -->
             <div class="flex items-center justify-between p-4 bg-brand-primary text-white">
                 <div class="flex items-center space-x-3">
-                    <span id="modalCounter" class="bg-brand-gold text-brand-primary text-xs font-bold px-2.5 py-0.5 rounded-full">1 / 5</span>
+                    <span id="modalCounter" class="bg-brand-gold text-brand-primary text-xs font-bold px-2.5 py-0.5 rounded-full">1 / 6</span>
                 </div>
                 <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition duration-200 flex-shrink-0">
                     <i class="fa-solid fa-xmark"></i>
@@ -321,13 +328,14 @@
 
     <!-- Lightbox Carousel Script -->
     <script>
-        // Gallery Data Array
+        // Gallery Data Array (matches the 6 DICT gallery cards)
         const galleryItems = [
             'Gallery/DICT Trainings/IMG_4117.JPG',
             'Gallery/DICT Trainings/IMG_4065.JPG',
             'Gallery/DICT Trainings/IMG_3261.JPG',
             'Gallery/DICT Trainings/IMG20251013104345 (1).jpg',
-            'Gallery/DICT Trainings/569817399_2673642912987329_2518664989557106780_n.jpg'
+            'Gallery/DICT Trainings/569817399_2673642912987329_2518664989557106780_n.jpg',
+            'Gallery/DICT Trainings/348eae50-1eb9-47f5-a918-7d8a9dd7fc45.jpg'
         ];
 
         let currentIndex = 0;
