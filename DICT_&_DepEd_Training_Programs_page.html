@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> DICT RISTT / DJPH / SPARK Training Program. - Project Details</title>
+    <title>DICT RISTT / DJPH / SPARK Training Program - Project Details</title>
     <link rel="icon" type="image/png" href="Gallery/Logo.png">
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,50 +24,97 @@
             }
         }
     </script>
+    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #08366b 0%, #4275a2 100%);
+        /* Smooth backdrop blur animation for image lightbox modal */
+        #imageModal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #imageModal {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .modal-content {
+            transform: scale(0.95);
+            transition: transform 0.3s ease-in-out;
+        }
+        #imageModal.active .modal-content {
+            transform: scale(1);
         }
     </style>
 </head>
-<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen relative selection:bg-brand-gold selection:text-brand-primary">
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full z-10 border-b-2 border-brand-primary">
+    <!-- Navigation Bar -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-md fixed w-full z-20 border-b-2 border-brand-primary">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-brand-primary hover:text-brand-medium font-bold flex items-center space-x-2 transition duration-150">
                 <i class="fa-solid fa-arrow-left"></i>
                 <span>Back to Portfolio</span>
             </a>
-            <a href="index.html#contact" class="bg-brand-primary text-white text-sm px-4 py-2 rounded-full font-semibold hover:bg-brand-medium transition duration-150">
+            <a href="index.html#contact" class="bg-brand-primary text-white text-sm px-4 py-2 rounded-full font-semibold hover:bg-brand-medium transition duration-150 shadow-sm">
                 Get In Touch
             </a>
         </div>
     </nav>
 
-    <!-- Hero Header -->
-    <section class="gradient-bg text-white pt-32 pb-16 px-6">
-        <div class="container mx-auto max-w-4xl">
-            <div class="flex items-center space-x-3 mb-4">
-                <span class="bg-brand-gold text-brand-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+    <!-- Full-Screen Hero Header -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-16 px-6 text-white overflow-hidden bg-brand-primary">
+        <!-- Background Cover Photo -->
+        <img 
+            src="Gallery/DICT Trainings/348eae50-1eb9-47f5-a918-7d8a9dd7fc45.jpg" 
+            alt="DICT Training Program Cover" 
+            class="absolute inset-0 w-full h-full object-cover object-center opacity-60 cursor-pointer hover:scale-105 transition-transform duration-700"
+            onclick="openModal(0)"
+        />
+        
+        <!-- Subtle Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/60 to-transparent pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-primary/80 via-brand-primary/40 to-transparent pointer-events-none"></div>
+
+        <!-- Header Content -->
+        <div class="container mx-auto max-w-4xl relative z-10">
+            <div class="flex flex-wrap items-center gap-3 mb-6">
+                <span class="bg-brand-gold text-brand-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
                     ICT Literacy & Public Sector Upskilling
                 </span>
-                <span class="text-brand-light text-sm font-medium">
+                <span class="text-brand-light text-sm font-semibold tracking-wide bg-brand-primary/50 px-3 py-1 rounded-full border border-brand-light/20 backdrop-blur-sm">
                     National & Local Initiatives
                 </span>
             </div>
-            <h1 class="text-3xl md:text-5xl font-bold mb-4">
-                 DICT RISTT / DJPH / SPARK Training Program.
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 drop-shadow-md leading-tight">
+                DICT RISTT / DJPH / SPARK Training Program
             </h1>
-            <p class="text-lg text-brand-light max-w-2xl">
+            <p class="text-lg md:text-xl text-brand-light max-w-2xl leading-relaxed drop-shadow-sm mb-6">
                 Facilitating digital transformation initiatives, ICT capacity building, and specialized skill tracks for educators, students, and public sector personnel.
             </p>
+
+            <!-- Recognition Tag -->
+            <div class="inline-flex items-center space-x-2 bg-yellow-500/20 backdrop-blur-md border border-brand-gold/40 text-brand-gold px-4 py-2 rounded-lg text-sm font-semibold mb-8">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <span>Resource Person — DICT Digital Empowerment Initiatives</span>
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="#overview" class="inline-flex items-center space-x-2 bg-brand-gold text-brand-primary font-bold px-6 py-3 rounded-full hover:bg-white transition duration-200 shadow-lg">
+                    <span>Explore Project Details</span>
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+                <button 
+                    onclick="openModal(0)" 
+                    class="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-medium px-5 py-3 rounded-full backdrop-blur-md border border-white/30 transition duration-200">
+                    <i class="fa-solid fa-expand"></i>
+                    <span>View Gallery</span>
+                </button>
+            </div>
         </div>
     </section>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12 max-w-4xl flex-grow">
+    <main id="overview" class="container mx-auto px-6 py-16 max-w-4xl flex-grow">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
             
             <!-- Main Column -->
@@ -83,6 +131,7 @@
                         Through structured workshops, hands-on ICT laboratories, and virtual assistant skill tracks, these programs bridge the digital divide by equipping teachers, administrators, and aspiring remote workers with industry-relevant digital capabilities.
                     </p>
                 </div>
+
                 <!-- Role -->                
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                     <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2">
@@ -120,42 +169,42 @@
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                     <h2 class="text-2xl font-bold text-brand-primary mb-4 border-b border-brand-light pb-2 flex justify-between items-center">
                         <span>Project Highlights & Gallery</span>
-                        <span class="text-xs text-gray-400 font-normal">Click or replace image sources below</span>
+                        <span class="text-xs text-gray-400 font-normal">Click any photo to enlarge</span>
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <!-- Photo 1 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="Gallery/DICT Trainings/IMG_4117.JPG" alt="" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div onclick="openModal(0)" class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer">
+                            <img src="Gallery/DICT Trainings/IMG_4117.JPG" alt="DICT Training Session 1" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
                             <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                                <span class="text-white text-xs font-semibold"></span>
+                                <span class="text-white text-xs font-semibold"><i class="fa-solid fa-expand mr-1"></i> View Photo</span>
                             </div>
                         </div>
                         <!-- Photo 2 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="Gallery/DICT Trainings/IMG_4065.JPG" alt="" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div onclick="openModal(1)" class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer">
+                            <img src="Gallery/DICT Trainings/IMG_4065.JPG" alt="DICT Training Session 2" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
                             <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                                <span class="text-white text-xs font-semibold"></span>
+                                <span class="text-white text-xs font-semibold"><i class="fa-solid fa-expand mr-1"></i> View Photo</span>
                             </div>
                         </div>
                         <!-- Photo 3 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="Gallery/DICT Trainings/IMG_3261.JPG" alt="" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div onclick="openModal(2)" class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer">
+                            <img src="Gallery/DICT Trainings/IMG_3261.JPG" alt="DICT Training Session 3" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
                             <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                                <span class="text-white text-xs font-semibold"></span>
+                                <span class="text-white text-xs font-semibold"><i class="fa-solid fa-expand mr-1"></i> View Photo</span>
                             </div>
                         </div>
                         <!-- Photo 4 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="Gallery/DICT Trainings/IMG20251013104345 (1).jpg" alt="" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div onclick="openModal(3)" class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer">
+                            <img src="Gallery/DICT Trainings/IMG20251013104345 (1).jpg" alt="DICT Training Session 4" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
                             <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                                <span class="text-white text-xs font-semibold"></span>
+                                <span class="text-white text-xs font-semibold"><i class="fa-solid fa-expand mr-1"></i> View Photo</span>
                             </div>
                         </div>
                         <!-- Photo 5 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="Gallery/DICT Trainings/569817399_2673642912987329_2518664989557106780_n.jpg" alt="" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div onclick="openModal(4)" class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer">
+                            <img src="Gallery/DICT Trainings/569817399_2673642912987329_2518664989557106780_n.jpg" alt="DICT Training Session 5" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
                             <div class="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                                <span class="text-white text-xs font-semibold"></span>
+                                <span class="text-white text-xs font-semibold"><i class="fa-solid fa-expand mr-1"></i> View Photo</span>
                             </div>
                         </div>
                     </div>
@@ -211,30 +260,4 @@
                             <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Technical Training</span>
                             <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Digital Admin</span>
                             <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Google Workspace</span>
-                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5 py-1 rounded-md font-medium">Process Docs</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Call to Action -->
-                <div class="bg-brand-light/30 p-6 rounded-xl border border-brand-light text-center">
-                    <h4 class="font-bold text-brand-primary mb-2">Planning an ICT Training Session?</h4>
-                    <p class="text-xs text-gray-600 mb-4">Let's collaborate to deliver technical and digital administrative workshops for your agency or institution.</p>
-                    <a href="index.html#contact" class="block w-full bg-brand-primary text-white py-2.5 rounded-lg text-sm font-bold hover:bg-brand-medium transition duration-200">
-                        Get In Touch
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-brand-primary text-white py-6 border-t border-brand-medium mt-auto">
-        <div class="container mx-auto px-6 text-center text-sm">
-            <p>&copy; 2026 Portfolio. All rights reserved.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                            <span class="bg-brand-light/40 text-brand-primary text-xs px-2.5
