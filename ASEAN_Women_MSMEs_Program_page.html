@@ -68,7 +68,7 @@
             src="Gallery/ASEAN Women/462582423_570555775597882_6670344056234100134_n.jpg" 
             alt="ASEAN Women MSMEs Training Cover" 
             class="absolute inset-0 w-full h-full object-cover object-center opacity-60 cursor-pointer hover:scale-105 transition-transform duration-700"
-            onclick="openModal(4)"
+            onclick="openModal(1)"
         />
         
         <!-- Subtle Gradient Overlay -->
@@ -104,7 +104,7 @@
                     <i class="fa-solid fa-arrow-down"></i>
                 </a>
                 <button 
-                    onclick="openModal(4)" 
+                    onclick="openModal(1)" 
                     class="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-medium px-5 py-3 rounded-full backdrop-blur-md border border-white/30 transition duration-200">
                     <i class="fa-solid fa-expand"></i>
                     <span>View Gallery</span>
@@ -188,7 +188,7 @@
                         </div>
                 
                         <!-- Photo 4 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(2)">
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(3)">
                             <img src="Gallery/ASEAN Women/20230710_202556.jpg" alt="Delegate Coaching" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
                             <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
                                 <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
@@ -282,7 +282,7 @@
             <!-- Modal Header / Controls -->
             <div class="flex items-center justify-between p-4 bg-brand-primary text-white">
                 <div class="flex items-center space-x-3">
-                    <span id="modalCounter" class="bg-brand-gold text-brand-primary text-xs font-bold px-2.5 py-0.5 rounded-full">1 / 5</span>
+                    <span id="modalCounter" class="bg-brand-gold text-brand-primary text-xs font-bold px-2.5 py-0.5 rounded-full">1 / 4</span>
                 </div>
                 <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition duration-200 flex-shrink-0">
                     <i class="fa-solid fa-xmark"></i>
@@ -319,13 +319,12 @@
 
     <!-- Lightbox Carousel Script -->
     <script>
-        // Gallery Data Array
+        // Gallery Data Array (matches the 4 ASEAN Women gallery cards)
         const galleryItems = [
-            'Gallery/ASEAN Women MSMEs/Photo1.jpg',
-            'Gallery/ASEAN Women MSMEs/Photo2.jpg',
-            'Gallery/ASEAN Women MSMEs/Photo3.jpg',
-            'Gallery/ASEAN Women MSMEs/Photo4.jpg',
-            'Gallery/ASEAN Women MSMEs/Cover.jpg'
+            'Gallery/ASEAN Women/462559273_1120967736258479_3154954254319218900_n.jpg',
+            'Gallery/ASEAN Women/462582423_570555775597882_6670344056234100134_n.jpg',
+            'Gallery/ASEAN Women/462638472_566854925935744_3797763177082925643_n.jpg',
+            'Gallery/ASEAN Women/20230710_202556.jpg'
         ];
 
         let currentIndex = 0;
