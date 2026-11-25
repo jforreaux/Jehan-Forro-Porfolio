@@ -68,7 +68,7 @@
             src="Gallery/FOPSCo/473987654_606352375356237_5610138743414848260_n.png" 
             alt="FOPSCo Strategic Governance & Operations Cover" 
             class="absolute inset-0 w-full h-full object-cover object-center opacity-60 cursor-pointer hover:scale-105 transition-transform duration-700"
-            onclick="openModal(4)"
+            onclick="openModal(0)"
         />
         
         <!-- Subtle Gradient Overlay -->
@@ -104,7 +104,7 @@
                     <i class="fa-solid fa-arrow-down"></i>
                 </a>
                 <button 
-                    onclick="openModal(4)" 
+                    onclick="openModal(0)" 
                     class="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-medium px-5 py-3 rounded-full backdrop-blur-md border border-white/30 transition duration-200">
                     <i class="fa-solid fa-expand"></i>
                     <span>View Gallery</span>
@@ -168,7 +168,7 @@
                         </div>
 
                         <!-- Photo 2 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(0)">
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(1)">
                             <img src="Gallery/FOPSCo/482056756_1093279926146649_6397128477040926846_n.jpg" alt="BOD Strategic Meeting" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
                             <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
                                 <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
@@ -178,7 +178,7 @@
                         </div>
 
                         <!-- Photo 3 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(0)">
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(2)">
                             <img src="Gallery/FOPSCo/490527329_1121679856639989_8816549939068416699_n.jpg" alt="BOD Strategic Meeting" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
                             <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
                                 <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
@@ -188,7 +188,7 @@
                         </div>
 
                         <!-- Photo 4 -->
-                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(0)">
+                        <div class="group relative overflow-hidden rounded-lg shadow-sm border border-gray-100 cursor-pointer" onclick="openModal(3)">
                             <img src="Gallery/FOPSCo/IMG_3548.JPG" alt="BOD Strategic Meeting" class="w-full h-48 object-cover transform group-hover:scale-110 transition duration-500">
                             <div class="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
                                 <div class="bg-white/20 p-3 rounded-full backdrop-blur-sm">
@@ -277,7 +277,7 @@
             <!-- Modal Header / Controls -->
             <div class="flex items-center justify-between p-4 bg-brand-primary text-white">
                 <div class="flex items-center space-x-3">
-                    <span id="modalCounter" class="bg-brand-gold text-brand-primary text-xs font-bold px-2.5 py-0.5 rounded-full">1 / 5</span>
+                    <span id="modalCounter" class="bg-brand-gold text-brand-primary text-xs font-bold px-2.5 py-0.5 rounded-full">1 / 4</span>
                 </div>
                 <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center text-white transition duration-200 flex-shrink-0">
                     <i class="fa-solid fa-xmark"></i>
@@ -314,13 +314,12 @@
 
     <!-- Lightbox Carousel Script -->
     <script>
-        // Gallery Data Array
+        // Gallery Data Array (matches the 4 FOPSCo gallery cards)
         const galleryItems = [
-            'Gallery/FOPSCo/IMG_BOD_MEETING.jpg',
-            'Gallery/FOPSCo/IMG_GAD_WORKSHOP.jpg',
-            'Gallery/FOPSCo/IMG_POLICY_FORUM.jpg',
-            'Gallery/FOPSCo/IMG_MEMBER_ASSEMBLY.jpg',
-            'Gallery/FOPSCo/IMG_FOPSCO_COVER.jpg'
+            'Gallery/FOPSCo/473987654_606352375356237_5610138743414848260_n.png',
+            'Gallery/FOPSCo/482056756_1093279926146649_6397128477040926846_n.jpg',
+            'Gallery/FOPSCo/490527329_1121679856639989_8816549939068416699_n.jpg',
+            'Gallery/FOPSCo/IMG_3548.JPG'
         ];
 
         let currentIndex = 0;
